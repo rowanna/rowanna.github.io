@@ -17,3 +17,8 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+thought:
+  label: thought
+  permalink: /thought
+  description: 생각을 정리합니다
