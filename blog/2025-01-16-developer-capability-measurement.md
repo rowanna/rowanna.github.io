@@ -1,9 +1,11 @@
 ---
-slug: long-blog-post
+slug: thought
 title: 개발자의 역량측정 메트릭은 개인의 역량만 측정할까?
 authors: rowanna
 tags: [thought]
 ---
+
+21년도에 쓴 글을 읽어보고 다시 든 생각 정리
 
 <!-- truncate -->
 
