@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rowanna.github.io/sitemap.xml
