@@ -1,70 +1,68 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import { type ReactNode, useRef, useEffect } from "react";
+import clsx from "clsx";
+import Heading from "@theme/Heading";
+import styles from "./styles.module.css";
 
-type FeatureItem = {
-  title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: ReactNode;
-};
+function createLoopingText(el) {
+  const lerp = (current, target, factor) =>
+    current * (1 - factor) + target * factor;
 
-const FeatureList: FeatureItem[] = [
-  {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-];
+  const state = {
+    el,
+    lerp: {
+      current: 0,
+      target: 0,
+    },
+    interpolationFactor: 0.1,
+    speed: 0.1,
+    direction: -1,
+  };
 
-function Feature({title, Svg, description}: FeatureItem) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
+  state.el.style.cssText =
+    "position: relative; display: inline-flex; white-space: nowrap;";
+  state.el.children[1].style.cssText = `position: absolute; left: ${
+    100 * -state.direction
+  }%;`;
+
+  function animate() {
+    state.lerp.target += state.speed;
+    state.lerp.current = lerp(
+      state.lerp.current,
+      state.lerp.target,
+      state.interpolationFactor
+    );
+
+    if (state.lerp.target > 100) {
+      state.lerp.current -= state.lerp.target;
+      state.lerp.target = 0;
+    }
+
+    const x = state.lerp.current * state.direction;
+    state.el.style.transform = `translateX(${x}%)`;
+  }
+
+  function render() {
+    animate();
+    window.requestAnimationFrame(render);
+  }
+  render();
+  return state;
 }
 
 export default function HomepageFeatures(): ReactNode {
+  const mainRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    mainRef.current
+      .querySelectorAll(".loop-container")
+      .forEach((el) => createLoopingText(el));
+  }, []);
+
   return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+    <section ref={mainRef} id="main_display">
+      <div className="loop-container">
+        <div className="item">I'm FrontEnd Developer.&nbsp;</div>
+        <div className="item">I'm FrontEnd Developer.&nbsp;</div>
+        <div className="item">I'm FrontEnd Developer.&nbsp;</div>
       </div>
     </section>
   );
