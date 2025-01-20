@@ -6,6 +6,18 @@ on:
       - main # main 브랜치에서 푸시할 때 실행
 
 jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - run: ls
+      - run: npm run build
+      - run: ls
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./build"
   deploy:
     runs-on: ubuntu-22.04
     steps:
@@ -53,7 +65,7 @@ jobs:
         with:
           github_token: ${{ secrets.SECRET_TOKEN }}
           publish_dir: ./build # 빌드된 정적 파일 경로
-          publish_branch: gh-pages # 배포 브랜치
+          publish_branch: main # 배포 브랜치
 
       # debugging
       - name: debugging
