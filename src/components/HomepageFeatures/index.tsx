@@ -58,12 +58,35 @@ export default function HomepageFeatures(): ReactNode {
   }, []);
 
   return (
-    <section ref={mainRef} id="main_display">
-      <div className="loop-container">
-        <div className="item">I'm FrontEnd Developer.&nbsp;</div>
-        <div className="item">I'm FrontEnd Developer.&nbsp;</div>
-        <div className="item">I'm FrontEnd Developer.&nbsp;</div>
-      </div>
-    </section>
+    <main id="main_display">
+      <section>
+        <div className="main_profile">
+          <div className="profile_img"></div>
+          <span></span>
+        </div>
+      </section>
+      <section>
+        <div className="section2_img"></div>
+      </section>
+      <section id="third_section">
+        <div>
+          <h2>Efficiency Quality</h2>
+          <p>
+            I like to put what I think into writing. I'm very interested in
+            <span>improving UX</span>. I believe in the
+            <span>power in progress</span>
+          </p>
+        </div>
+
+        <div className="section3_img"></div>
+      </section>
+      <section ref={mainRef} id="main_display_paragraph">
+        <div className="loop-container">
+          <div className="item">I'm FrontEnd Developer.&nbsp;</div>
+          <div className="item">I'm FrontEnd Developer.&nbsp;</div>
+          <div className="item">I'm FrontEnd Developer.&nbsp;</div>
+        </div>
+      </section>
+    </main>
   );
 }
