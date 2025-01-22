@@ -69,6 +69,13 @@ const config: Config = {
   ],
 
   themeConfig: {
+    metadata: [
+      {
+        name: "keywords",
+        content:
+          "rowanna, frontend developer, wonjina, nawonji, 나원지, 프론트엔드개발, 깃허브블로그, rowannablog",
+      },
+    ],
     // Replace with your project's social card
     image: "img/IMG_8280.JPG",
     navbar: {
