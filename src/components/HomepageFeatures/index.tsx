@@ -62,7 +62,7 @@ export default function HomepageFeatures(): ReactNode {
       <section>
         <div className="main_profile">
           <div className="profile_img"></div>
-          <button>VIEW CV</button>
+          <button>VIEW CV*</button>
         </div>
       </section>
       <section>
