@@ -13,8 +13,8 @@ const ENV_VARIABLE = {
 
 const config: Config = {
   title: `${ENV_VARIABLE.blogName}`,
-  tagline: "wannabe 일잘러",
-  // favicon: "img/favicon.ico",
+  // tagline: "",
+  favicon: "img/my-notion-face-portrait.png",
 
   // Set the production url of your site here
   url: `${ENV_VARIABLE.blogURL}`,
