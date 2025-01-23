@@ -22,3 +22,13 @@ thought:
   label: thought
   permalink: /thought
   description: 생각을 정리합니다
+
+blog:
+  label: blog
+  permalink: /blog
+  description: 블로그 관련 글을 정리합니다
+
+frontend:
+  label: frontend
+  permalink: /frontend
+  description: frontend 관련 글을 정리합니다
