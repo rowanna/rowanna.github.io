@@ -97,7 +97,21 @@ const config: Config = {
           position: "left",
           label: "About",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        {
+          type: "dropdown",
+          label: "Blog",
+          position: "left",
+          items: [
+            {
+              label: "Posts",
+              href: "/blog",
+            },
+            {
+              label: "Tags",
+              href: "/blog/tags",
+            },
+          ],
+        },
         {
           href: ENV_VARIABLE.githubURL,
           label: "GitHub",
