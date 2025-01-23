@@ -1,11 +1,12 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
+import { useLocation } from "@docusaurus/router";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const ENV_VARIABLE = {
-  blogName: "rowannablog.",
+  blogName: "rowanna.",
   blogURL: "https://rowanna.github.io",
   userName: "rowanna",
   githubURL: "https://github.com/rowanna",
@@ -85,11 +86,16 @@ const config: Config = {
       // src: "img/logo.svg",
       // },
       items: [
+        // {
+        //   type: "docSidebar",
+        //   sidebarId: "tutorialSidebar",
+        //   position: "right",
+        //   label: "Docs",
+        // },
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "right",
-          label: "Tutorial",
+          to: "/about",
+          position: "left",
+          label: "About",
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
@@ -103,11 +109,23 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: "Sites",
           items: [
+            // {
+            //   label: "Docs",
+            //   to: "/docs/intro",
+            // },
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: "About",
+              to: "/about",
+            },
+            {
+              label: "Blog",
+              to: "/blog",
+            },
+            {
+              label: "Portfolio",
+              to: "/",
             },
           ],
         },
@@ -132,12 +150,12 @@ const config: Config = {
           title: "More",
           items: [
             {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
               label: "GitHub",
               href: ENV_VARIABLE.githubURL,
+            },
+            {
+              label: "LinkedIn",
+              href: "https://www.linkedin.com/in/wonji-na-a9a345275/",
             },
           ],
         },
