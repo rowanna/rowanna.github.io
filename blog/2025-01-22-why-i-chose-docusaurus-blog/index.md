@@ -1,6 +1,6 @@
 ---
 slug: why-i-chose-docusaurus-blog
-title: 포트폴리오겸 블로그로 docusaurus를 선택한 이유
+title: 포트폴리오 겸 블로그로 docusaurus를 선택한 이유
 authors: [rowanna]
 tags: [blog, frontend]
 ---
