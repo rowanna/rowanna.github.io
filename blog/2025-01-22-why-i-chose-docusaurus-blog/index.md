@@ -5,7 +5,7 @@ authors: [rowanna]
 tags: [blog, frontend]
 ---
 
-블로그 + 포트폴리오로 `docusaurus`를 이용해서 만든 이유부터 그 과정을 이야기 해보는 글(1)
+블로그 + 포트폴리오로 `docusaurus`를 이용해서 만든 이유부터 그 과정을 이야기 해보는 글
 
 <!-- truncate -->
 
