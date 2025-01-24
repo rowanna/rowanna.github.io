@@ -85,6 +85,7 @@ const config: Config = {
     // Replace with your project's social card
     image: "img/IMG_8280.JPG",
     navbar: {
+      hideOnScroll: true,
       title: `${ENV_VARIABLE.blogName}`,
       // logo: {
       // alt: "My Site Logo",
