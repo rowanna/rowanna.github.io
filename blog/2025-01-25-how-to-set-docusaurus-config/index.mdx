@@ -33,6 +33,7 @@ src는 static 폴더를 기준으로 합니다.
 ### link 설정
 
 link안에 아래의 객체 템플릿을 추가해서 여러 컬럼으로 링크를 구성할 수 있습니다.
+컬럼 갯수에는 제한이 없습니다.
 
 ```typescript
   footer: {
@@ -85,7 +86,6 @@ to 대신 href로 사용하면 새 창 열기 아이콘이 표시됩니다.
 ### navbar 제목 설정하기
 
 ```ts
-export default {
   themeConfig: {
     navbar: {
       title: "Site Title", // 사이트 이름
@@ -102,13 +102,14 @@ export default {
       },
     },
   },
-};
 ```
+
+사이트의 이름 부분을 navbar부분에서 설정할 수 있습니다.
+뿐만아니라 logo도 커스텀이 가능합니다.
 
 ### navbar link 설정하기
 
 ```ts
-export default {
   themeConfig: {
     navbar: {
       items: [
@@ -153,13 +154,14 @@ export default {
       ],
     },
   },
-};
 ```
+
+상단 navbar에 있는 link는 드롭다운 스타일도 제공합니다.
+현재 제 블로그에 설정되어 있으니 참고하시면 됩니다.
 
 ### 검색 기능 설정하기
 
 ```ts
-export default {
   themeConfig: {
     navbar: {
       items: [
@@ -170,13 +172,11 @@ export default {
       ],
     },
   },
-};
 ```
 
 ### HTML 넣기
 
 ```ts
-export default {
   themeConfig: {
     navbar: {
       items: [
@@ -188,10 +188,27 @@ export default {
       ],
     },
   },
-};
 ```
 
+커스텀하여 링크를 구성할 수도 있습니다.
+
+### 스크롤 시 hide 설정
+
+```ts
+themeConfig: {
+    navbar: {
+      hideOnScroll: true,
+    },
+  },
+```
+
+설정하게 되면 아래로 스크롤 시 navbar가 사라집니다.
+
 ## 🤾 메타태그 설정하기
+
+사이트가 검색이 잘 되기 위해서는 메타태그 설정이 필수입니다.  
+초반엔 docusaurus로 범벅이 되어있으니 자신만의 사이트를 구축하고 싶다면
+읽어보시고 꼭 설정을 바꿔주세요!
 
 ### 메타 이미지 설정하기(카카오톡 미리보기 그거요)
 
@@ -223,6 +240,8 @@ export default {
 
 공유 하면 이렇게 뜬답니다!!
 🫧🫧와아아~~~~~~🫧🫧
+
+다음번에는 좀 더 상세한 블로그 커스텀으로 돌아오겠슴니다.
 
 ## 🤾 출처
 
