@@ -1,6 +1,6 @@
 ---
 slug: profiling-react
-title: react 프로파일러로 성능을 측정 및 디버깅 해보기
+title: react 프로파일러로 성능 측정 및 디버깅 해보기
 authors: [rowanna]
 tags: [frontend, react, optimizingPerformance]
 ---
@@ -40,3 +40,38 @@ react profiler로 성능최적화 해보기
 - 개발자 도구 -> component
   component 탭에 가면 컴포넌트의 계층 정보와 props 정보 등을 알 수 있고 수정도 가능합니다.
   ![alt text](image-2.png)
+
+## ✨React 성능 프로파일링 이용해서 컴포넌트 렌더링 시간 알아보기
+
+```jsx
+import React, { Profiler } from "react";
+
+function onRenderCallback(
+  id,
+  phase,
+  actualDuration,
+  baseDuration,
+  startTime,
+  commitTime,
+  interactions
+) {
+  console.log(`컴포넌트 ${id}의 렌더링 시간: ${actualDuration}`);
+}
+
+function MyComponent() {
+  return (
+    <Profiler id="MyComponent" onRender={onRenderCallback}>
+      {/* 컴포넌트 내용 */}
+    </Profiler>
+  );
+}
+```
+
+```text
+# 결과물 예시
+컴포넌트 MyComponent의 렌더링 시간: 78.5
+```
+
+### 출처
+
+항해플러스 3기 Frontend Docs
