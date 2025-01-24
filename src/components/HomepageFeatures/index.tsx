@@ -58,7 +58,7 @@ export default function HomepageFeatures(): ReactNode {
   }, []);
 
   return (
-    <main id="main_display">
+    <div id="main_display">
       <section>
         <div className="main_profile">
           <div className="profile_img"></div>
@@ -87,6 +87,6 @@ export default function HomepageFeatures(): ReactNode {
           <div className="item">I'm FrontEnd Developer.&nbsp;</div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
