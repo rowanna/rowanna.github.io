@@ -242,3 +242,8 @@
     top: 100px;
   }
 }
+
+img {
+  box-shadow: grey -1px -1px 12px;
+  margin: 20px 0;
+}
