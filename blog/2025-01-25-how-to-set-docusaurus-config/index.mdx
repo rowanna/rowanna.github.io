@@ -1,0 +1,222 @@
+---
+slug: how-to-set-docusaurus-config
+title: docusaurus blog 커스텀 시작해보기
+authors: [rowanna]
+tags: [frontend, react, blog]
+---
+
+docusaurus.config.ts을 변경하여 상단 navbar, footer, meta tag를 설정해봅시다.
+
+{/* truncate */}
+
+배포에 성공했으면 블로그 커스텀을 시작해봅시다.
+
+## 🤾 footer 설정하기
+
+### logo 설정
+
+```typescript
+footer: {
+    logo: {
+        alt: 'Meta Open Source Logo',
+        src: 'img/meta_oss_logo.png',
+        href: 'https://opensource.fb.com',
+        width: 160,
+        height: 51,
+    },
+    copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+},
+```
+
+src는 static 폴더를 기준으로 합니다.
+
+### link 설정
+
+link안에 아래의 객체 템플릿을 추가해서 여러 컬럼으로 링크를 구성할 수 있습니다.
+
+```typescript
+  footer: {
+    links: [
+      {
+        title: 'Docs',
+        items: [
+          {
+            label: 'Style Guide',
+            to: 'docs/',
+          },
+          {
+            label: 'Second Doc',
+            to: 'docs/doc2/',
+          },
+        ],
+      },
+      {
+        title: 'Community',
+        items: [
+          {
+            label: 'Stack Overflow',
+            href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+          },
+          {
+            label: 'Discord',
+            href: 'https://discordapp.com/invite/docusaurus',
+          },
+          {
+            label: 'X',
+            href: 'https://x.com/docusaurus',
+          },
+          {
+            html: `
+                <a href="https://www.netlify.com" target="_blank" rel="noreferrer noopener" aria-label="Deploys by Netlify">
+                  <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+                </a>
+              `,
+          },
+        ],
+      },
+    ],
+  },
+```
+
+to 대신 href로 사용하면 새 창 열기 아이콘이 표시됩니다.
+
+## 🤾 navbar 설정하기
+
+### navbar 제목 설정하기
+
+```ts
+export default {
+  themeConfig: {
+    navbar: {
+      title: "Site Title", // 사이트 이름
+      logo: {
+        alt: "Site Logo",
+        src: "img/logo.svg", // static 폴더를 기준으로
+        srcDark: "img/logo_dark.svg", // dark mode 일때의 src
+        href: "https://docusaurus.io/",
+        target: "_self",
+        width: 32,
+        height: 32,
+        className: "custom-navbar-logo-class",
+        style: { border: "solid red" },
+      },
+    },
+  },
+};
+```
+
+### navbar link 설정하기
+
+```ts
+export default {
+  themeConfig: {
+    navbar: {
+      items: [
+        {
+          type: "doc",
+          position: "left",
+          docId: "introduction",
+          label: "Docs", // 아이템 이름
+        },
+        { to: "blog", label: "Blog", position: "left" },
+        {
+          type: "docsVersionDropdown",
+          position: "right",
+        },
+        {
+          type: "localeDropdown",
+          position: "right",
+        },
+        {
+          href: "https://github.com/facebook/docusaurus",
+          position: "right",
+          className: "header-github-link",
+          "aria-label": "GitHub repository",
+        },
+        // // 현재 블로그 설정 예시 START (dropdown)
+        {
+          type: "dropdown",
+          label: "Blog",
+          position: "left",
+          items: [
+            {
+              label: "Posts",
+              href: "/blog",
+            },
+            {
+              label: "Tags",
+              href: "/blog/tags",
+            },
+          ],
+        },
+        // 현재 블로그 설정 예시 END
+      ],
+    },
+  },
+};
+```
+
+### 검색 기능 설정하기
+
+```ts
+export default {
+  themeConfig: {
+    navbar: {
+      items: [
+        {
+          type: "search",
+          position: "right",
+        },
+      ],
+    },
+  },
+};
+```
+
+### HTML 넣기
+
+```ts
+export default {
+  themeConfig: {
+    navbar: {
+      items: [
+        {
+          type: "html",
+          position: "right",
+          value: "<button>Give feedback</button>",
+        },
+      ],
+    },
+  },
+};
+```
+
+## 🤾 메타태그 설정하기
+
+### 메타 이미지 설정하기(카카오톡 미리보기 그거요)
+
+```ts
+export default {
+  themeConfig: {
+    image: "img/docusaurus.png", // 기본 경로는 static>img입니다.
+  },
+};
+```
+
+### 메타 정보 설정하기
+
+```ts
+    metadata: [
+      {
+        name: "keywords",
+        content:
+        // 검색했을 때 보이는 단어들
+          "rowanna, frontend developer, wonjina, nawonji, 나원지, 프론트엔드개발, 깃허브블로그, rowannablog",
+      },
+      {name: 'twitter:card', content: 'summary'}
+    ],
+```
+
+## 🤾 출처
+
+[docusaurus site](https://docusaurus.io/docs/api/themes/configuration#codeblock)
