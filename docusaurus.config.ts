@@ -86,14 +86,14 @@ const config: Config = {
       // src: "img/logo.svg",
       // },
       items: [
+        // {
+        //   type: "docSidebar",
+        //   sidebarId: "tutorialSidebar",
+        //   position: "right",
+        //   label: "Docs",
+        // },
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
-          position: "right",
-          label: "Docs",
-        },
-        {
-          href: "/about",
+          to: "/about",
           position: "left",
           label: "About",
         },
@@ -125,10 +125,10 @@ const config: Config = {
         {
           title: "Sites",
           items: [
-            {
-              label: "Docs",
-              to: "/docs/intro",
-            },
+            // {
+            //   label: "Docs",
+            //   to: "/docs/intro",
+            // },
             {
               label: "About",
               to: "/about",
