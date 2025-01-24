@@ -1,7 +1,6 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
-import { useLocation } from "@docusaurus/router";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -70,6 +69,12 @@ const config: Config = {
   ],
 
   themeConfig: {
+    docs: {
+      versionPersistence: "localStorage",
+    },
+    colorMode: {
+      defaultMode: "light",
+    },
     metadata: [
       {
         name: "keywords",
@@ -113,6 +118,10 @@ const config: Config = {
           ],
         },
         {
+          type: "search",
+          position: "right",
+        },
+        {
           href: ENV_VARIABLE.githubURL,
           label: "GitHub",
           position: "right",
@@ -143,23 +152,6 @@ const config: Config = {
             },
           ],
         },
-        // {
-        //   title: "Community",
-        //   items: [
-        //     {
-        //       label: "Stack Overflow",
-        //       href: "https://stackoverflow.com/questions/tagged/docusaurus",
-        //     },
-        //     {
-        //       label: "Discord",
-        //       href: "https://discordapp.com/invite/docusaurus",
-        //     },
-        //     {
-        //       label: "X",
-        //       href: "https://x.com/docusaurus",
-        //     },
-        //   ],
-        // },
         {
           title: "More",
           items: [
