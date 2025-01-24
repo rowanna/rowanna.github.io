@@ -1,6 +1,6 @@
 ---
 slug: profiling-react
-title: react 프로파일러로 성능을 측정해보자
+title: react 프로파일러로 성능을 측정 및 디버깅 해보기
 authors: [rowanna]
 tags: [frontend, react, optimizingPerformance]
 ---
@@ -29,6 +29,7 @@ react profiler로 성능최적화 해보기
 ### 렌더링 과정 레코딩하기
 
 - 개발자 도구 -> profiler -> 상단 왼쪽의 파란색 동그라미 클릭 -> 서비스 동작 후 -> 상단 왼쪽의 붉은색 동그라미 클릭하면 측정이 끝납니다.
+
   ![프로파일러 초기설정하기](video.gif)
   ![alt text](image-3.png)
 
