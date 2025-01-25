@@ -1,11 +1,11 @@
 ---
 slug: profiling-react
-title: react 프로파일러로 성능 측정 및 디버깅 해보기
+title: react 프로파일러로 컴포넌트 렌더링 측정하는 법
 authors: [rowanna]
 tags: [frontend, react, optimizingPerformance]
 ---
 
-react profiler로 성능최적화 해보기
+react profiler로 컴포넌트 렌더를 측정해보는 방법들
 
 <!-- truncate -->
 
