@@ -2,7 +2,7 @@
 slug: make-docusaurus-blog
 title: docusaurus로 프로젝트 만들고 github.io로 배포하기
 authors: [rowanna]
-tags: [blog, frontend]
+tags: [blog, frontend, docusaurus]
 ---
 
 `docusaurus`를 이용해서 github 블로그 만들기(1) - 일단 프로젝트 만들어서 github.io로 배포해보기

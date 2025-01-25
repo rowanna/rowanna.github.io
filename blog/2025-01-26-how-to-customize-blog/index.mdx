@@ -1,0 +1,39 @@
+---
+slug: how-to-customize-blog
+title: docusaurus로 블로그 글을 써보자
+authors: [rowanna]
+tags: [frontend, blog, docusaurus]
+---
+
+TOC 설정부터 이미지 확대 기능 설정 후 글 작성하기
+
+{/* truncate */}
+
+## 🙌 TOC 설정하기
+
+`docusarus.config.ts`
+
+```ts
+export default {
+  themeConfig: {
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 5,
+    },
+  },
+};
+```
+
+## 🙌 medium-zoom 설정하기
+
+이미지가 잘 보이지 않아서 medium-zoom을 설치해줬다.
+
+## 🙌 글 작성하기
+
+### authors 추가하기
+
+### tags 추가하기
+
+### .md로 작성하기
+
+### .mdx로 작성하기
