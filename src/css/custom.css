@@ -55,6 +55,7 @@
 #homePageFeatures {
   height: calc(100vh - 60px);
   overflow: hidden;
+  min-height: 1000px;
 }
 
 /* main display */

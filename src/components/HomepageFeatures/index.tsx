@@ -70,7 +70,7 @@ export default function HomepageFeatures(): ReactNode {
       </section>
       <section id="third_section">
         <div>
-          <h2>Efficiency Quality</h2>
+          <h2>Frontend Developer</h2>
           <p>
             I like to put what I think into writing. I'm very interested in
             <span>improving UX</span>. I believe in the
