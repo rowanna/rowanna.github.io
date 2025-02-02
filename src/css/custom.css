@@ -38,7 +38,7 @@
   src: url("../../static/fonts/PlayfairDisplay-VariableFont_wght.ttf");
 }
 
-* {
+*:not(code span):not(code):not(pre) {
   font-family: Manrope;
 }
 .navbar {
