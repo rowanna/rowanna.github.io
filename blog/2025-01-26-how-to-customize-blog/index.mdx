@@ -18,7 +18,7 @@ export default {
   themeConfig: {
     tableOfContents: {
       minHeadingLevel: 2,
-      maxHeadingLevel: 5,
+      maxHeadingLevel: 5, // heading 5까지 TOC로 접근할 수 있습니다.
     },
   },
 };
@@ -26,14 +26,123 @@ export default {
 
 ## 🙌 medium-zoom 설정하기
 
-이미지가 잘 보이지 않아서 medium-zoom을 설치해줬다.
+이미지가 잘 보이지 않아서 medium-zoom을 설치해줬습니다.
 
-## 🙌 글 작성하기
+### 설치하기
+
+```bash
+npm i medium-zoom
+```
+
+설치가 완료되면 모든 img에 medium-zoom을 설정하는 세팅을 해주면 됩니다.
+
+### 설정하기
+
+아래 순서대로 폴더를 만들고 파일을 만들어줍니다.  
+`src > theme > BlogPostPage > index.tsx
+`
+
+```ts
+import React, { useEffect } from "react";
+import OriginalBlogPostPage from "@theme-original/BlogPostPage";
+import mediumZoom from "medium-zoom";
+
+export default function BlogPostPageWrapper(props) {
+  useEffect(() => {
+    // 블로그 포스트 로드 후 이미지에 줌 효과 추가
+    const zoom = mediumZoom(document.querySelectorAll("img"), {
+      margin: 24, // 이미지 확대 시 주변 여백
+    });
+
+    return () => {
+      zoom.detach(); // 컴포넌트 해제 시 줌 효과 제거
+    };
+  }, []);
+
+  return <OriginalBlogPostPage {...props} />;
+}
+```
+
+위처럼 설정하게 되면 medium-zoom이 적용됩니다.
+
+## 🙌 글 작성전 authors, tags설정하기
+
+글을 작성하기 위해선 author, tags를 사전에 추가해주어야 합니다.
 
 ### authors 추가하기
 
+```yml title="/blog/authors.yml"
+rowanna: # md, mdx에서 쓸 author값
+  name: rowanna
+  title: Front End Engineer
+  url: https://github.com/rowanna
+  image_url: https://github.com/rowanna.png # 유저 로고를 설정할 수  있습니다.
+  page: true
+  # 1. true로 설정하면 /blog/authors/rowanna 링크로 글쓴이의 글들을 모아서 볼 수 있습니다.
+  # 2. /blog/authors/<permalink>로 커스터마이징 하고싶다면 true를 설정하지 않고 아래처럼 적어줍니다.
+  #  permalink: "/all-sebastien-lorber-articles"
+
+  socials:
+    github: rowanna # 깃헙 아이디를 적습니다.
+    linkedin: wonji-na # 링크드인 아이디를 적습니다.
+    x: yangshunz # x 아이디를 적습니다.
+    newsletter: https://thisweekinreact.com
+```
+
 ### tags 추가하기
 
-### .md로 작성하기
+```yml title="/blog/tags.yml"
+thought: # md, mdx에서 쓸 tags값
+  label: thought
+  permalink: /thought # /blog/tags/{permalink} url로 접근할 수 있습니다.
+  description: 생각을 정리합니다
+```
 
-### .mdx로 작성하기
+## 🙌 파일 이름, 폴더이름 정하기
+
+폴더, 파일 이름 공통적으로 앞에 `YYYY-MM-DD`를 적어야만 글의 날짜 설정이 됩니다.  
+`YYYY-MM-DD`로 설정해도 되고, `YYYY-MM-DD-blahblah`라고 지정해도 상관없습니다.
+
+폴더를 만들었을 경우에는, `.md`, `.mdx`파일의 이름을 `index.md`, `index.mdx`로 지정합니다.
+
+## 🙌 글 작성하기
+
+태그와 글쓴이를 설정했으면 글을 써봅시다.
+
+### `.md`로 작성하기
+
+blog 폴더 하위에 폴더나 파일을 만들어서 작성하면 됩니다.
+
+```md
+---
+slug: first-post # 포스트 path값 -> /blog/first-post
+title: 첫 게시물 제목
+authors: rowanna # 다수 글쓴이일 경우 [author1, author2]
+tags: [thought]
+---
+
+미리보기 글은 여기에 써주세요(포스트목록, 포스트 공유하기 시 첫 문장으로 나옵니다)
+
+<!-- truncate -->
+
+<!-- 위의 truncate 주석문 다음에 본문내용 작성해주시면 됩니다. -->
+```
+
+### `.mdx`로 작성하기
+
+```mdx
+---
+slug: first-post # 포스트 path값 -> /blog/first-post
+title: 첫 게시물 제목
+authors: [rowanna] # 다수 글쓴이일 경우 [author1, author2]
+tags: [frontend, blog, docusaurus]
+---
+
+미리보기 글은 여기에 써주세요(포스트목록, 포스트 공유하기 시 첫 문장으로 나옵니다)
+
+{/* truncate */}
+
+위의 truncate 주석문 다음에 여기에 본문내용 작성해주시면 됩니다.
+```
+
+이상으로 docusaurus로 블로그 글을 발행하는 것까지 완료해보았습니다.
