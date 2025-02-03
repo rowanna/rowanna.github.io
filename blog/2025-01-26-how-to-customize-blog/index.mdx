@@ -11,9 +11,10 @@ TOC 설정부터 이미지 확대 기능 설정 후 글 작성하기
 
 ## 🙌 TOC 설정하기
 
-`docusarus.config.ts`
+하단의 toc를 설정하지 않아도 기본적으로 heading 3까지는 표시됩니다.  
+heading 3보다 더 깊은 뎁스를 표시하고 싶으면 아래처럼 설정값을 바꿔주면 됩니다.
 
-```ts
+```ts title="docusarus.config.ts"
 export default {
   themeConfig: {
     tableOfContents: {
@@ -42,7 +43,7 @@ npm i medium-zoom
 `src > theme > BlogPostPage > index.tsx
 `
 
-```ts
+```ts title="src/theme/BlogPostPage/index.tsx"
 import React, { useEffect } from "react";
 import OriginalBlogPostPage from "@theme-original/BlogPostPage";
 import mediumZoom from "medium-zoom";

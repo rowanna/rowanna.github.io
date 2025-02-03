@@ -1,22 +1,7 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
-
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
-
 docusaurus:
   label: Docusaurus
   permalink: /docusaurus
-  description: Docusaurus tag description
-
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+  description: Docusaurus 관련된 글을 정리합니다
 
 thought:
   label: thought
@@ -42,3 +27,8 @@ optimizingPerformance:
   label: optimizingPerformance
   permalink: /optimizingPerformance
   description: 성능최적화 관련 글을 정리합니다
+
+nextjs:
+  label: nextjs
+  permalink: /nextjs
+  description: Next.js 관련 글을 정리합니다
