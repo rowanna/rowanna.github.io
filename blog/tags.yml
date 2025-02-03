@@ -32,3 +32,8 @@ nextjs:
   label: nextjs
   permalink: /nextjs
   description: Next.js 관련 글을 정리합니다
+
+ASAC07:
+  label: ASAC07
+  permalink: /ASAC07
+  description: ASAC 부트캠프에서 배운 내용들을 정리합니다

@@ -3,15 +3,15 @@ slug: frontend-rendering-pattern
 title: Next.js와 SSG, CSR, SSR, ISR 싸그리 이해하기(작성중)
 authors: [rowanna]
 image: "image.png"
-tags: [frontend]
+tags: [frontend, ASAC07]
 ---
+
+![alt text](image.png)
 
 Next.js를 왜 써야할까?  
 웹 페이지 렌더 방식인 SSG, CSR, SSR, ISR에 대해 알아보고, SPA, MPA가 뭔지 알아봅시다
 
 <!-- truncate -->
-
-![alt text](image.png)
 
 ## ✨Next.js란?
 

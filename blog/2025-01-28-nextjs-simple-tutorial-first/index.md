@@ -2,15 +2,15 @@
 slug: nextjs-simple-tutorial-first
 title: Next.js가 처음인 그대를 위한 간단한 튜토리얼(1)
 authors: [rowanna]
-image: "image.png"
-tags: [frontend, nextjs]
+image: "image-6.png"
+tags: [frontend, nextjs, ASAC07]
 ---
+
+![alt text](image-6.png)
 
 Next.js와 친해지기 위한 간단한 튜토리얼(라우터 설정)
 
 <!-- truncate -->
-
-![alt text](image.png)
 
 ## 👩‍💻 Next.js 프로젝트 생성
 
