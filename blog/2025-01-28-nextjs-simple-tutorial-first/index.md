@@ -8,7 +8,7 @@ tags: [frontend, nextjs, ASAC07]
 
 ![alt text](image-6.png)
 
-Next.js와 친해지기 위한 간단한 튜토리얼(라우터 설정)
+Next.js와 친해지기 위한 간단한 튜토리얼(페이지 설정)
 
 <!-- truncate -->
 
