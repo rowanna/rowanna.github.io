@@ -7,7 +7,7 @@ tags: [frontend, ASAC07]
 ---
 
 <head>
-  <meta property="og:image" content="image.png" />
+  <meta property="og:image" content="/blog/2025-01-27-why-use-nextjs/image.png" />
 </head>
 ![](image.png)
 

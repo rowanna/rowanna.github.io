@@ -7,7 +7,7 @@ tags: [frontend, nextjs, ASAC07]
 ---
 
 <head>
-  <meta property="og:image" content="image-6.png" />
+  <meta property="og:image" content="/blog/2025-01-28-nextjs-simple-tutorial-first/image-6.png" />
 </head>
 ![](image-6.png)
 
