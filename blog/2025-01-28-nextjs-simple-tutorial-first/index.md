@@ -8,7 +8,7 @@ tags: [frontend, nextjs, ASAC07]
 
 ![alt text](image-6.png)
 
-Next.js와 친해지기 위한 간단한 튜토리얼(페이지 설정)
+Next.js와 친해지기 위한 간단한 튜토리얼(Route - 페이지 설정)
 
 <!-- truncate -->
 
@@ -83,13 +83,51 @@ npm run dev
 
 ## 👩‍💻 컴포넌트를 통해 새 페이지 만들어보기
 
+### `page.tsx`는 뭘까...✨
+
+페이지를 만들기 위해서는, react-router-dom과 다르게 폴더 생성만으로 라우트 설정이 가능합니다.  
+page파일을 app 디렉토리 안에 `export default` React Component로 만들면 url이 생성됩니다.
+
+```tsx title="app/page.tsx"
+export default function Page() {
+  return <h1>Hello Next.js!</h1>;
+}
+```
+
+위의 경로대로 파일을 생성하면 `localhost:3000/`로 접근이 가능합니다.
+
+### `layout.tsx`는 뭘까..✨
+
+다수의 페이지에서 공유하는 UI라고 볼 수 있습니다.  
+layout은 상태를 유지하고, 리렌더링 되지 않습니다.
+
+```tsx title="app/layout.tsx"
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        {/* Layout UI */}
+        {/* Place children where you want to render a page or nested layout */}
+        <main>{children}</main>
+      </body>
+    </html>
+  );
+}
+```
+
+주의할 점은, 프로젝트의 루트인 app 디렉토리에 있는 layout은 꼭 `html` , `body` 태그를 포함해야한다는 것입니다.
+
+### dashboard 디렉토리 및 파일 생성
+
 이제 라우터를 만들어 봅시다.  
 react에서는 react-router-dom을 활용하여 각 페이지마다 jsx를 연결해주어야 했습니다.  
 하지만 next.js에서는 App router가 도입되면서 app 하위에 디렉토리를 구성하는 것만으로도 페이지 생성이 가능하게 되었습니다.
 
 `/dashboard` 패스로 접근 할 수 있는 페이지를 만들어봅시다.
-
-### dashboard 디렉토리 및 파일 생성
 
 ```tsx title="src/app/dashboard/page.tsx"
 import Link from "next/link";
@@ -147,7 +185,7 @@ export default function Invoices() {
 
 ![alt text](image-4.png)
 
-다음 포스트에선 에러처리에 대해서 알아보도록 합시다.
+다음 포스트에선 Route를 이용하여 백엔드 API를 만들어봅시다.
 
 ## 👩‍💻 출처
 
