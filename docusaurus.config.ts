@@ -175,6 +175,9 @@ const config: Config = {
         ENV_VARIABLE.userName
       }, Inc. Built with Docusaurus.`,
     },
+    disqus: {
+      shortname: "rowanna",
+    },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
