@@ -42,7 +42,16 @@ const DisqusComments = () => {
     }
   }, [shortname, url, location.pathname]);
 
-  return <div id="disqus_thread"></div>;
+  return (
+    <div
+      id="disqus_thread"
+      style={{
+        background: "#a4a4a4",
+        padding: "20px",
+        boxShadow: "1px 1px 6px #bbb9b9",
+      }}
+    ></div>
+  );
 };
 
 export default function BlogPostItemContent({
