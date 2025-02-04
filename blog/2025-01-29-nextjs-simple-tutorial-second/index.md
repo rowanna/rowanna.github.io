@@ -6,7 +6,10 @@ image: "/blog/2025-01-29-nextjs-simple-tutorial-second/image-2.png"
 tags: [frontend, nextjs, ASAC07]
 ---
 
-![alt text](image-2.png)
+<head>
+  <meta property="og:image" content="image-2.png" />
+</head>
+![](image-2.png)
 
 Next.js와 친해지기 위한 간단한 튜토리얼(Route - 백엔드 API 설정)
 

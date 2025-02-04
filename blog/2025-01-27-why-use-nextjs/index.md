@@ -6,7 +6,10 @@ image: "/blog/2025-01-27-why-use-nextjs/image.png"
 tags: [frontend, ASAC07]
 ---
 
-![alt text](image.png)
+<head>
+  <meta property="og:image" content="image.png" />
+</head>
+![](image.png)
 
 Next.js를 왜 써야할까?🤔
 
