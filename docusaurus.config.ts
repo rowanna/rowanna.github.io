@@ -60,6 +60,10 @@ const config: Config = {
           onInlineTags: "warn",
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
+          blogSidebarCount: "ALL",
+          blogSidebarTitle: "All my posts",
+          // blogListComponent: "/src/components/BlogListComponent",
+          blogListComponent: "@theme/BlogListPage",
         },
         theme: {
           customCss: "./src/css/custom.css",
