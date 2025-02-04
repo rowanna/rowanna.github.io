@@ -6,10 +6,6 @@ image: "https://rowanna.github.io/assets/images/image-6-46edb3ef3507ca7c4cbbba76
 tags: [frontend, nextjs, ASAC07]
 ---
 
-<!-- <head>
-  <meta property="og:image" content="/blog/2025-01-28-nextjs-simple-tutorial-first/image-6.png" />
-</head> -->
-
 ![](image-6.png)
 
 Next.js와 친해지기 위한 간단한 튜토리얼(Route - 페이지 설정)
