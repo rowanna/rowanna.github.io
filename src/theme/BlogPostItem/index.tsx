@@ -28,8 +28,13 @@ function HitsComponent() {
   );
 }
 
-const DisqusComments = ({ shortname, url, identifier }) => {
+const DisqusComments = () => {
+  const shortname = "rowanna";
+  const url = typeof window !== "undefined" ? window.location.href : "";
+  const location = useLocation(); // 현재 블로그 글의 URL 가져오기
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     if (window.DISQUS) {
       window.DISQUS.reset({ reload: true });
     } else {
@@ -38,7 +43,7 @@ const DisqusComments = ({ shortname, url, identifier }) => {
       script.setAttribute("data-timestamp", +new Date());
       document.body.appendChild(script);
     }
-  }, [shortname, url, identifier]);
+  }, [shortname, url, location.pathname]);
 
   return <div id="disqus_thread"></div>;
 };
@@ -59,7 +64,7 @@ export default function BlogPostItem({
       <BlogPostItemHeader />
       <HitsComponent />
       <BlogPostItemContent>{children}</BlogPostItemContent>
-      <DisqusComments shortname="rowanna" url={window.location.href} />
+      <DisqusComments />
       <BlogPostItemFooter />
     </BlogPostItemContainer>
   );
