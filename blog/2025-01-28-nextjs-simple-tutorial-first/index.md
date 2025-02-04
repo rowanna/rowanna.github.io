@@ -2,7 +2,7 @@
 slug: nextjs-simple-tutorial-first
 title: Next.js가 처음인 그대를 위한 간단한 튜토리얼(1)
 authors: [rowanna]
-image: "image-6.png"
+image: "/blog/2025-01-28-nextjs-simple-tutorial-first/image-6.png"
 tags: [frontend, nextjs, ASAC07]
 ---
 

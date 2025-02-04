@@ -2,7 +2,7 @@
 slug: why-use-nextjs
 title: 웹 페이지 렌더링 방식에서 본 Next.js 쓰는 이유
 authors: [rowanna]
-image: "image.png"
+image: "/blog/2025-01-27-why-use-nextjs/image.png"
 tags: [frontend, ASAC07]
 ---
 
