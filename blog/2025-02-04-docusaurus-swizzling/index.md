@@ -6,7 +6,7 @@ image: "https://rowanna.github.io/assets/images/image-86d0c117415d16cc10fc5a4afc
 tags: [blog, Docusaurus]
 ---
 
-![alt text](image.png)
+![](image.png)
 **Docusaurus블로그 `BlogPostItem` 컴포넌트에 swizzling으로 `disqus` 댓글추가, `hits` 조회수 추가 기능을 추가해보자.**
 
 <!-- truncate -->
