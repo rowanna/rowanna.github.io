@@ -108,20 +108,15 @@ const config: Config = {
           label: "About",
         },
         {
-          type: "dropdown",
-          label: "Blog",
+          to: "/blog",
           position: "left",
-          items: [
-            {
-              label: "Posts",
-              href: "/blog",
-            },
-            {
-              label: "Tags",
-              href: "/blog/tags",
-            },
-          ],
+          label: "Blog",
         },
+        // {
+        //   to: "/blog/tags",
+        //   position: "left",
+        //   label: "Category",
+        // },
         {
           type: "search",
           position: "right",
@@ -151,10 +146,10 @@ const config: Config = {
               label: "Blog",
               to: "/blog",
             },
-            {
-              label: "Portfolio",
-              to: "/",
-            },
+            // {
+            //   label: "Portfolio",
+            //   to: "/",
+            // },
           ],
         },
         {
