@@ -3,7 +3,7 @@ slug: nextjs-portfolio-upgrade-first
 title: Next.js로 jQuery 포트폴리오 업그레이드하기 - 초기설정, 퍼블리싱 편
 authors: [rowanna]
 image: "https://rowanna.github.io/assets/images/image-d2d9c8efdacb904da5802be5da400686.png"
-tags: [blog, nextjs]
+tags: [frontend, nextjs]
 ---
 
 ![](image.png)
