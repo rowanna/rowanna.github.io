@@ -7,13 +7,13 @@ tags: [blog, Docusaurus]
 ---
 
 ![](image.png)
-**Docusaurus블로그 `BlogPostItem` 컴포넌트에 swizzling으로 `disqus` 댓글추가, `hits` 조회수 추가 기능을 추가해보자.**
+**Docusaurus블로그 `BlogPostItem` 컴포넌트에 swizzling으로 `utteranc` 댓글추가, `hits` 조회수 추가 기능을 추가해보자.**
 
 <!-- truncate -->
 
 블로그 글을 쓰다가 문득 블로그 글마다 얼마나 조회했는지, 또 댓글같은 반응은 어떤지를 보고 싶어졌습니다.  
 docusaurus에서 자체적으로 제공하는 기능은 없어서 다른 기능을 써야했는데  
-댓글 기능으로는 `disqus`를 사용하기로, 조회 수 기능은 `hits`를 쓰기로 결정했습니다.
+댓글 기능으로는 `utteranc`를 사용하기로, 조회 수 기능은 `hits`를 쓰기로 결정했습니다.
 
 ## 📝 `docusaurus swizzling`이란?
 
@@ -81,7 +81,7 @@ Eject방식은 해당 컴포넌트의 내부코드와 함께 받는 것입니다
 이 방식으로 하신다면 이 깃헙을 꼭 참고해 보세요  
 [swizzling 할 수 있는 컴포넌트 목록 보러가기](https://github.com/facebook/docusaurus/tree/main/packages/docusaurus-theme-classic/src/theme)
 
-## 📝 `BlogPostItem/Content` 컴포넌트에 `disqus` 댓글기능 + `hits` 추가해보기
+## 📝 `BlogPostItem/Content` 컴포넌트에 `utteranc` 댓글기능 + `hits` 추가해보기
 
 ### 초기 코드
 
@@ -112,17 +112,16 @@ export default function BlogPostItemContent({
 }
 ```
 
-### disqus 회원가입하고 username알아오기
+### utteranc 에서 스크립트 태그 생성해오기
 
-disqus회원가입 후 만든 사이트 이름을 알아오면 됩니다.(Your Sites 부분)  
-![alt text](image-6.png)
+[utteranc사이트](https://utteranc.es/)에 가서 자신의 레포 이름을 적으면 하단에 스크립트 태그를 생성할 수 있는 칸이 나옵니다.
 
-### disqus 컴포넌트에 적용하기
+### utteranc 컴포넌트에 적용하기
 
 몇 번 적용해보니 PostList에서 쓰이는 UI가 제목까지는 같기도 했고  
 `isBlogPostPage`에 따라서 클래스가 바뀌는 것 같았어요.  
 `isBlogPostPage`조건을 추가하지 않고 그냥 컴포넌트를 렌더링 시키니까 `BlogPostList`에서도 댓글창이 나오더라구요.  
-그래서 해당조건을 기준으로 `disqus` 댓글창이 보이게끔 설정해주었습니다.
+그래서 해당조건을 기준으로 `utteranc` 댓글창이 보이게끔 설정해주었습니다.
 
 ```tsx title="src/theme/BlogPostItem/Content/index.tsx"
 import React, { type ReactNode } from "react";
@@ -135,33 +134,26 @@ import { useLocation } from "@docusaurus/router";
 import { useEffect } from "react";
 
 // highlight-start
-const DisqusComments = () => {
-  const shortname = "rowanna";
-  const url = typeof window !== "undefined" ? window.location.href : "";
-  const location = useLocation(); // 현재 블로그 글의 URL 가져오기
+const UtterancesComments = () => {
+  const { metadata } = useBlogPost();
+  const commentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    const script = document.createElement("script");
+    script.src = "https://utteranc.es/client.js";
+    script.setAttribute("repo", "rowanna/rowanna.github.io"); // GitHub 저장소 설정
+    script.setAttribute("issue-term", "pathname"); // 게시글의 URL을 기준으로 Issue 생성
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
 
-    if (window.DISQUS) {
-      window.DISQUS.reset({ reload: true });
-    } else {
-      const script = document.createElement("script");
-      script.src = `https://${shortname}.disqus.com/embed.js`;
-      script.setAttribute("data-timestamp", +new Date());
-      document.body.appendChild(script);
+    if (commentRef.current) {
+      commentRef.current.innerHTML = "";
+      commentRef.current.appendChild(script);
     }
-  }, [shortname, url, location.pathname]);
+  }, []);
 
-  return (
-    <div
-      id="disqus_thread"
-      style={{
-        background: "#a4a4a4",
-        padding: "20px",
-        boxShadow: "1px 1px 6px #bbb9b9",
-      }}
-    ></div>
-  );
+  return <div ref={commentRef} />;
 };
 // highlight-end
 
@@ -178,7 +170,7 @@ export default function BlogPostItemContent({
     >
       <MDXContent>{children}</MDXContent>
       // highlight-start
-      {isBlogPostPage ? <DisqusComments /> : <></>}
+      {isBlogPostPage ? <UtterancesComments /> : <></>}
       // highlight-end
     </div>
   );
@@ -220,33 +212,26 @@ function HitsComponent() {
   );
 }
 // highlight-end
-const DisqusComments = () => {
-  const shortname = "rowanna";
-  const url = typeof window !== "undefined" ? window.location.href : "";
-  const location = useLocation(); // 현재 블로그 글의 URL 가져오기
+const UtterancesComments = () => {
+  const { metadata } = useBlogPost();
+  const commentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    const script = document.createElement("script");
+    script.src = "https://utteranc.es/client.js";
+    script.setAttribute("repo", "rowanna/rowanna.github.io"); // GitHub 저장소 설정
+    script.setAttribute("issue-term", "pathname"); // 게시글의 URL을 기준으로 Issue 생성
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
 
-    if (window.DISQUS) {
-      window.DISQUS.reset({ reload: true });
-    } else {
-      const script = document.createElement("script");
-      script.src = `https://${shortname}.disqus.com/embed.js`;
-      script.setAttribute("data-timestamp", +new Date());
-      document.body.appendChild(script);
+    if (commentRef.current) {
+      commentRef.current.innerHTML = "";
+      commentRef.current.appendChild(script);
     }
-  }, [shortname, url, location.pathname]);
+  }, []);
 
-  return (
-    <div
-      id="disqus_thread"
-      style={{
-        background: "#a4a4a4",
-        padding: "20px",
-        boxShadow: "1px 1px 6px #bbb9b9",
-      }}
-    ></div>
-  );
+  return <div ref={commentRef} />;
 };
 
 export default function BlogPostItemContent({
@@ -264,7 +249,7 @@ export default function BlogPostItemContent({
       {isBlogPostPage ? <HitsComponent /> : <></>}
       // highlight-end
       <MDXContent>{children}</MDXContent>
-      {isBlogPostPage ? <DisqusComments /> : <></>}
+      {isBlogPostPage ? <UtterancesComments /> : <></>}
     </div>
   );
 }
@@ -273,8 +258,7 @@ export default function BlogPostItemContent({
 ## 📝 완성!
 
 ![alt text](image-7.png)
-
-![alt text](image-8.png)
+![alt text](image-9.png)
 
 ## 출처
 

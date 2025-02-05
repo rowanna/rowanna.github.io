@@ -5,7 +5,7 @@ import { useBlogPost } from "@docusaurus/plugin-content-blog/client";
 import MDXContent from "@theme/MDXContent";
 import type { Props } from "@theme/BlogPostItem/Content";
 import { useLocation } from "@docusaurus/router";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 function HitsComponent() {
   const location = useLocation(); // 현재 블로그 글의 URL 가져오기
@@ -25,33 +25,27 @@ function HitsComponent() {
     </div>
   );
 }
-const DisqusComments = () => {
-  const shortname = "rowanna";
-  const url = typeof window !== "undefined" ? window.location.href : "";
-  const location = useLocation(); // 현재 블로그 글의 URL 가져오기
+
+const UtterancesComments = () => {
+  const { metadata } = useBlogPost();
+  const commentRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    const script = document.createElement("script");
+    script.src = "https://utteranc.es/client.js";
+    script.setAttribute("repo", "rowanna/rowanna.github.io"); // GitHub 저장소 설정
+    script.setAttribute("issue-term", "pathname"); // 게시글의 URL을 기준으로 Issue 생성
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
 
-    if (window.DISQUS) {
-      window.DISQUS.reset({ reload: true });
-    } else {
-      const script = document.createElement("script");
-      script.src = `https://${shortname}.disqus.com/embed.js`;
-      script.setAttribute("data-timestamp", +new Date());
-      document.body.appendChild(script);
+    if (commentRef.current) {
+      commentRef.current.innerHTML = "";
+      commentRef.current.appendChild(script);
     }
-  }, [shortname, url, location.pathname]);
+  }, []);
 
-  return (
-    <div
-      id="disqus_thread"
-      style={{
-        background: "#a4a4a4",
-        padding: "20px",
-        boxShadow: "1px 1px 6px #bbb9b9",
-      }}
-    ></div>
-  );
+  return <div ref={commentRef} />;
 };
 
 export default function BlogPostItemContent({
@@ -68,7 +62,7 @@ export default function BlogPostItemContent({
       {isBlogPostPage ? <HitsComponent /> : <></>}
       <MDXContent>{children}</MDXContent>
 
-      {isBlogPostPage ? <DisqusComments /> : <></>}
+      {isBlogPostPage ? <UtterancesComments /> : <></>}
     </div>
   );
 }
