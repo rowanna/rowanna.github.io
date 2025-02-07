@@ -7,6 +7,7 @@ tags: [frontend, nextjs]
 ---
 
 ![](image.png)
+
 **2020년 취업 초반에 만들었던 jQuery 포트폴리오를 Next.js로 업그레이드하면서 적는 Next.js 고군분투기**
 
 <!-- truncate -->
@@ -15,6 +16,8 @@ tags: [frontend, nextjs]
 [어떤 한 사이트](https://aainterior.com.ua/)를 참고해가며 클론코딩을 만든 포트폴리오였습니다.  
 나름 php도 붙여가며 회원가입, 로그인기능도 붙여놨지만 유지보수를 안하기도 했고 어찌저찌하여 내 손을 떠나게 되었는데, 그 때 막 퍼블리싱을 배우던 때라 jQuery로 성능도 생각하지 않고 냅다 코딩했던 기억만 있어요.  
 다시 코드를 까보니 넘나 더러워서.... 언젠가 업그레이드 해야겠다고 생각한 거 지금 react, next.js 배우고 있는 김에 업그레이드해봐야겠다고 결심했습니다.
+
+- **[https://aainterior.com.ua/](https://aainterior.com.ua/)를 클론코딩한 사이트 입니다.**
 
 ## 🍽️ next.js로 선택한 이유
 
