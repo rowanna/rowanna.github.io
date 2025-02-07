@@ -1,5 +1,5 @@
 ---
-slug: nextjs-portfolio-upgrade-secind
+slug: nextjs-portfolio-upgrade-second
 title: Next.js로 jQuery 포트폴리오 업그레이드하기 - 컴포넌트화 편
 authors: [rowanna]
 image: "https://rowanna.github.io/assets/images/image-d2d9c8efdacb904da5802be5da400686.png"
