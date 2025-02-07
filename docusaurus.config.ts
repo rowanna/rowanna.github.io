@@ -43,9 +43,9 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl: `${ENV_VARIABLE.githubURL}/rowanna.github.io/tree/main/`,
+          path: "docs/series",
+          routeBasePath: "/series",
         },
         blog: {
           showReadingTime: true,
@@ -62,7 +62,6 @@ const config: Config = {
           onUntruncatedBlogPosts: "warn",
           blogSidebarCount: "ALL",
           blogSidebarTitle: "All my posts",
-          // blogListComponent: "/src/components/BlogListComponent",
           blogListComponent: "@theme/BlogListPage",
         },
         theme: {
@@ -71,43 +70,25 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-  themes: ["@docusaurus/theme-search-algolia"],
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "frontend",
+        path: "docs/frontend", // `docs/frontend` 폴더 내 문서 관리
+        routeBasePath: "frontend", // /frontend 경로로 접근 가능
+        sidebarPath: "./frontendSidebars.ts",
+      },
+    ],
+  ],
 
   themeConfig: {
-    algolia: {
-      // The application ID provided by Algolia
-      appId: "YOUR_APP_ID",
-
-      // Public API key: it is safe to commit it
-      apiKey: "YOUR_SEARCH_API_KEY",
-
-      indexName: "YOUR_INDEX_NAME",
-
-      // Optional: see doc section below
-      contextualSearch: true,
-
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-      externalUrlRegex: "external\\.com|domain\\.com",
-
-      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-      replaceSearchResultPathname: {
-        from: "/", // or as RegExp: /\/docs\//
-        to: "/",
-      },
-
-      // Optional: Algolia search parameters
-      searchParameters: {},
-
-      // Optional: path for search page that enabled by default (`false` to disable it)
-      searchPagePath: "search",
-
-      // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
-      insights: false,
-
-      //... other Algolia params
-    },
     docs: {
       versionPersistence: "localStorage",
+      sidebar: {
+        hideable: true,
+        autoCollapseCategories: true,
+      },
     },
     colorMode: {
       defaultMode: "light",
@@ -129,16 +110,25 @@ const config: Config = {
       // src: "img/logo.svg",
       // },
       items: [
+        // {
+        //   to: "/about",
+        //   position: "left",
+        //   label: "About",
+        // },
         {
-          to: "/about",
+          type: "docSidebar",
+          sidebarId: "series",
           position: "left",
-          label: "About",
+          label: "Series",
+          // to: "/series",
         },
         {
           type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          sidebarId: "frontend",
           position: "left",
-          label: "Series",
+          label: "Frontend",
+          to: "/frontend",
+          docsPluginId: "frontend",
         },
         {
           to: "/blog",
@@ -202,9 +192,6 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} ${
         ENV_VARIABLE.userName
       }, Inc. Built with Docusaurus.`,
-    },
-    disqus: {
-      shortname: "rowanna",
     },
     prism: {
       theme: prismThemes.github,
