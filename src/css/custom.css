@@ -41,11 +41,13 @@
 *:not(code span):not(code):not(pre) {
   font-family: Manrope;
 }
+
+img {
+  box-shadow: grey -1px -1px 12px;
+  margin: 20px 0;
+}
 .navbar {
   justify-content: center;
-}
-.navbar__inner {
-  max-width: 1320px;
 }
 
 .navbar__link {
@@ -180,6 +182,12 @@
   color: #ee6723;
 }
 
+.collapseSidebarButton_PEFL {
+  position: absolute !important;
+  top: 60px;
+  left: 230px;
+  border: none !important;
+}
 @media (max-width: 940px) {
   #homePageFeatures {
     height: unset;
@@ -242,9 +250,4 @@
   #main_display #third_section h2::after {
     top: 100px;
   }
-}
-
-img {
-  box-shadow: grey -1px -1px 12px;
-  margin: 20px 0;
 }
