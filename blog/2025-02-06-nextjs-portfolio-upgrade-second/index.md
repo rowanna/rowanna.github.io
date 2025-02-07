@@ -403,5 +403,5 @@ json 데이터는 다음과 같습니다.
 
 ## 🍽️ 결과물 보기
 
-아직 진행중입니다. 다음 포스팅에선 css 개선을 해볼거에요.
+아직 진행중입니다. 다음 포스팅에선 css 개선을 해볼거에요.  
 [https://nextjs-portfolio-migration.vercel.app/](https://nextjs-portfolio-migration.vercel.app/)
