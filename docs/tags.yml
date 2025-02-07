@@ -1,0 +1,44 @@
+docusaurus:
+  label: Docusaurus
+  permalink: /docusaurus
+  description: Docusaurus 관련된 글을 정리합니다
+
+thought:
+  label: thought
+  permalink: /thought
+  description: 생각을 정리합니다
+
+blog:
+  label: blog
+  permalink: /blog
+  description: 블로그 관련 글을 정리합니다
+
+frontend:
+  label: frontend
+  permalink: /frontend
+  description: frontend 관련 글을 정리합니다
+
+react:
+  label: react
+  permalink: /react
+  description: react 관련 글을 정리합니다
+
+optimizingPerformance:
+  label: optimizingPerformance
+  permalink: /optimizingPerformance
+  description: 성능최적화 관련 글을 정리합니다
+
+nextjs:
+  label: nextjs
+  permalink: /nextjs
+  description: Next.js 관련 글을 정리합니다
+
+ASAC07:
+  label: ASAC07
+  permalink: /ASAC07
+  description: ASAC 부트캠프에서 배운 내용들을 정리합니다
+
+CSS:
+  label: CSS
+  permalink: /CSS
+  description: CSS 관련된 내용들을 정리합니다
