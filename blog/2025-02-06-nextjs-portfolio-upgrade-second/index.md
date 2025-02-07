@@ -396,7 +396,7 @@ json 데이터는 다음과 같습니다.
 
 ## 🍽️ jQuery에서 next.js로 컴포넌트화, css적용하면서 문제를 겪은 부분
 
-### 이미지가 나오지 않는 문제ß
+### 이미지가 나오지 않는 문제
 
 ![alt text](image-9.png)
 `myWorksSection`에서 이미지는 `img`태그로 한 것이 아닌 `css backgroundimage`로 적용한 것입니다. 경로를 `json`에서 동적으로 끌고 와야한 상황이었고 css파일에서 일일히 적용해줄 수 없는 상황이었는데요. `inline`으로 스타일을 지정하고 이미지는 `src/public`이 아닌 제일 루트에 있는 `public`폴더에 넣어 이미지가 렌더 되게하였습니다.
@@ -405,7 +405,3 @@ json 데이터는 다음과 같습니다.
 
 아직 진행중입니다. 다음 포스팅에선 css 개선을 해볼거에요.
 [https://nextjs-portfolio-migration.vercel.app/](https://nextjs-portfolio-migration.vercel.app/)
-
-## 출처
-
--
