@@ -2,6 +2,7 @@ import { type ReactNode, useRef, useEffect } from "react";
 import clsx from "clsx";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
+import Link from "@docusaurus/Link";
 
 function createLoopingText(el) {
   const lerp = (current, target, factor) =>
@@ -65,27 +66,36 @@ export default function HomepageFeatures(): ReactNode {
           <button>VIEW CV*</button>
         </div>
       </section>
-      <section>
+      <section ref={mainRef}>
         <div className="section2_img"></div>
+        <div id="main_display_paragraph">
+          <div className="loop-container">
+            <div className="item">I'm FrontEnd Developer.&nbsp;</div>
+            <div className="item">I'm FrontEnd Developer.&nbsp;</div>
+            <div className="item">I'm FrontEnd Developer.&nbsp;</div>
+          </div>
+        </div>
       </section>
       <section id="third_section">
         <div>
-          <h2>Frontend Developer</h2>
+          <h2>rowanna.</h2>
           <p>
             I like to put what I think into writing. I'm very interested in
             <span>improving UX</span>. I believe in the
             <span>power in progress</span>
           </p>
+          <div className="mainBtnWrap">
+            <button>
+              <Link to={"/about"}>* About</Link>
+            </button>
+
+            <button>
+              <Link to={"/series/intro"}>* Blog</Link>
+            </button>
+          </div>
         </div>
 
         <div className="section3_img"></div>
-      </section>
-      <section ref={mainRef} id="main_display_paragraph">
-        <div className="loop-container">
-          <div className="item">I'm FrontEnd Developer.&nbsp;</div>
-          <div className="item">I'm FrontEnd Developer.&nbsp;</div>
-          <div className="item">I'm FrontEnd Developer.&nbsp;</div>
-        </div>
       </section>
     </div>
   );
