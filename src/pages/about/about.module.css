@@ -1,0 +1,84 @@
+:root {
+  --ifm-color-primary: #ee6723;
+  --ifm-color-primary-dark: #d05a1f;
+  --ifm-color-primary-darker: #a84919;
+  --ifm-color-primary-darkest: #803813;
+  --ifm-color-primary-light: #ee7d44;
+  --ifm-color-primary-lighter: #f0976a;
+  --ifm-color-primary-lightest: #f2af8d;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --arrow-color: white;
+  --arrow-size: 1em;
+  --arrow-border: 0.2em;
+}
+
+.aboutPage {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+  opacity: 0.8;
+  background-image: radial-gradient(#f2af8d 0.5px, #f8d1be 0.5px);
+  background-size: 10px 10px;
+}
+.container {
+  margin: 0 auto;
+  width: 700px;
+  padding: 30px;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -25vw;
+  left: -25vw;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background-color: #f18149;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -25vw;
+  right: -25vw;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  background-color: #f18149;
+}
+.home_link {
+  display: inline-block;
+  margin-bottom: 30px;
+  font-size: 30px;
+  -webkit-text-stroke: 1px #fff;
+}
+.home_link:hover {
+  text-decoration: none;
+}
+section {
+  margin-bottom: 30px;
+}
+.profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 30px;
+}
+
+.profile_img {
+  background-image: url("/static/img/my-notion-face-portrait.png");
+  background-size: cover;
+  background-position: 0% 70%;
+
+  height: 300px;
+  width: 300px;
+
+  grid-row: 1 / span 2;
+}
+.profile_info_link_wrap a {
+  margin-right: 10px;
+  font-weight: 700;
+}

@@ -80,9 +80,12 @@ export default function HomepageFeatures(): ReactNode {
         <div>
           <h2>rowanna.</h2>
           <p>
-            I like to put what I think into writing. I'm very interested in
-            <span>improving UX</span>. I believe in the
-            <span>power in progress</span>
+            프론트엔드 개발자입니다.
+            <br />
+            제가 생각한 것을 글로 적는 것을 좋아합니다.
+            <br />
+            <span>UX 향상</span>에 관심이 많습니다. <br />
+            저는 <span>과정의 힘</span>을 믿습니다.
           </p>
           <div className="mainBtnWrap">
             <button>
@@ -90,7 +93,7 @@ export default function HomepageFeatures(): ReactNode {
             </button>
 
             <button>
-              <Link to={"/series/intro"}>* Blog</Link>
+              <Link to={"/blog"}>* Blog</Link>
             </button>
           </div>
         </div>

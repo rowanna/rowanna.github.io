@@ -57,10 +57,10 @@ img {
   font-weight: 400;
 }
 
+/* main page START */
 #homePageFeatures {
   height: 100vh;
   overflow: hidden;
-  /* min-height: 1000px; */
 }
 
 /* main display */
@@ -168,15 +168,11 @@ img {
   position: absolute;
   top: 4.5vw;
   left: 0;
-  font-family: "PlayfairDisplay";
 }
 
 #third_section span {
-  font-family: PlayfairDisplay;
-  font-weight: 500;
-  font-style: italic;
+  font-weight: 900;
   letter-spacing: 1px;
-
   color: #ee6723;
 }
 
@@ -280,13 +276,19 @@ img {
   border-radius: 8px;
 }
 
+/* main page END */
+
+/* sidebar START */
 .collapseSidebarButton_PEFL {
   position: absolute !important;
   top: 60px;
   left: 230px;
   border: none !important;
 }
+/* sidebar END */
+
 @media (max-width: 940px) {
+  /* main page START */
   #homePageFeatures {
     height: unset;
   }
@@ -341,10 +343,6 @@ img {
     min-width: 250px;
     min-height: 290px;
   }
-}
 
-@media (max-width: 479px) {
-  #main_display #third_section h2::after {
-    top: 100px;
-  }
+  /* main page END */
 }
