@@ -1,0 +1,34 @@
+{
+  "activities": [
+    {
+      "id": 1,
+      "title": "사내 javascript스터디",
+      "short_desc": "프로젝트 짧은설명",
+      "date": "2023.07.13 - 2024.07.31",
+      "tags": ["javascript"],
+      "type": "study",
+      "long_desc": "long_desc",
+      "backgroundImgUrl": "/img/activities/deep_dive_study.png"
+    },
+    {
+      "id": 2,
+      "title": "항해플러스 프론트엔드 3기항해플러스 프론트엔드 3기",
+      "short_desc": "프로젝트 짧은설명짧은설명짧은설명짧은설명짧은설명짧은설명짧은설명짧은설명짧은설명짧은설명짧은설명짧은설명짧은설명짧은설명짧은설명짧은설명",
+      "date": "2023.07.13 - 2024.07.31",
+      "tags": ["javascript"],
+      "type": "bootcamp",
+      "long_desc": "long_desc",
+      "backgroundImgUrl": "/img/activities/hanghae.png"
+    },
+    {
+      "id": 3,
+      "title": "ASAC07기",
+      "short_desc": "프로젝트 짧은설명",
+      "date": "2023.07.13 - 2024.07.31",
+      "tags": ["javascript"],
+      "type": "bootcamp",
+      "long_desc": "long_desc",
+      "backgroundImgUrl": "/img/activities/asac.png"
+    }
+  ]
+}

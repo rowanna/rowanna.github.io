@@ -1,0 +1,45 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "SKT T우주 구축 프로젝트",
+      "short_desc": "프로젝트 설명",
+      "date": "2023.07.13 - 2024.07.31",
+      "tags": ["jQuery", "css", "jenkins"],
+      "company": "softworks",
+      "long_desc": "long_desc",
+      "backgroundImgUrl": "/img/projects/tuniverse.png"
+    },
+    {
+      "id": 2,
+      "title": "SKB 클라우드PC 어드민포탈",
+      "short_desc": "프로젝트 설명",
+      "date": "2023.07.13 - 2024.07.31",
+      "tags": ["jQuery", "css", "jenkins"],
+      "company": "softworks",
+      "long_desc": "long_desc",
+      "backgroundImgUrl": "/img/projects/skb_cloud_pc.png"
+    },
+
+    {
+      "id": 3,
+      "title": "삼성전자 UK 사이트",
+      "short_desc": "프로젝트 설명",
+      "date": "2023.07.13 - 2024.07.31",
+      "tags": ["jQuery", "css", "jenkins"],
+      "company": "softworks",
+      "long_desc": "long_desc",
+      "backgroundImgUrl": "/img/projects/samsung.png"
+    },
+    {
+      "id": 3,
+      "title": "SKT T우주 안정화",
+      "short_desc": "프로젝트 설명",
+      "date": "2023.07.13 - 2024.07.31",
+      "tags": ["jQuery", "css", "jenkins"],
+      "company": "softworks",
+      "long_desc": "long_desc",
+      "backgroundImgUrl": "/img/projects/tuniverse2.png"
+    }
+  ]
+}

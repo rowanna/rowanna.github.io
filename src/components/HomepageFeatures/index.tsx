@@ -80,12 +80,10 @@ export default function HomepageFeatures(): ReactNode {
         <div>
           <h2>rowanna.</h2>
           <p>
-            프론트엔드 개발자입니다.
-            <br />
             제가 생각한 것을 글로 적는 것을 좋아합니다.
             <br />
             <span>UX 향상</span>에 관심이 많습니다. <br />
-            저는 <span>과정의 힘</span>을 믿습니다.
+            <span>과정의 힘</span>을 믿는 프론트엔드 개발자입니다.
           </p>
           <div className="mainBtnWrap">
             <button>
