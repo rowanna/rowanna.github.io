@@ -13,6 +13,7 @@
 .about_dialog {
   width: 1000px;
   min-width: 500px;
+  border: 10px solid #f2af8d;
 }
 .about_dialog::backdrop {
   position: fixed;
@@ -21,6 +22,61 @@
   bottom: 0px;
   left: 0px;
   background: rgba(0, 0, 0, 0.9);
+}
+.about_dialog button {
+  position: absolute;
+  right: -25px;
+  top: 25px;
+  overflow: hidden;
+  width: 50px;
+  padding: 10px 0 0;
+  background-color: #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 2px solid #f2af8d;
+  cursor: pointer;
+  color: transparent;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  text-transform: uppercase;
+  outline: none;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-in;
+}
+
+.about_dialog button::before,
+.about_dialog button::after {
+  background-color: #f2af8d;
+  content: "";
+  display: block;
+  height: 3px;
+  right: -44px;
+  position: absolute;
+  transform-origin: center left;
+  transition: all 0.2s ease-in;
+  width: 91.4214px;
+  z-index: -1;
+}
+
+.about_dialog button::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.about_dialog button::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.about_dialog button:hover {
+  color: #8a2387;
+}
+
+.about_dialog button:hover::before,
+.about_dialog button:hover::after {
+  height: 50px;
+  transform: rotate(0deg);
 }
 
 .dialog_item_desc {
@@ -157,6 +213,7 @@
   display: flex;
   flex-direction: column;
   transition: all 0.4s;
+  color: #000;
 }
 .work_card_item:hover button {
   transform: scale(1.05);

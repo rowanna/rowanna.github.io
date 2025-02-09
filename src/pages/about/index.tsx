@@ -36,7 +36,7 @@ export default function Home(): ReactNode {
     const current = dialogRef.current ?? document.createElement("dialog");
 
     if (!current) return;
-    if (e.target.nodeName === "DIALOG") {
+    if (e.target.nodeName === "DIALOG" || e.target.nodeName === "BUTTON") {
       current.close();
     }
 
@@ -214,6 +214,7 @@ export default function Home(): ReactNode {
             <span>{dialogData.type}</span>
           </div>
         </div>
+        <button onClick={(e) => closeDialog(e)}>Close</button>
       </dialog>
     </div>
   );
