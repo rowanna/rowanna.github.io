@@ -1,14 +1,48 @@
-import { useRef, type ReactNode } from "react";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Layout from "@theme/Layout";
-import Heading from "@theme/Heading";
+import { useRef, useState, type ReactNode } from "react";
 import styles from "./about.module.css";
 import Link from "@docusaurus/Link";
 import { projects } from "../../../static/json/projects.json";
 import { activities } from "../../../static/json/activities.json";
 
+type MyObject = {
+  id: Number;
+  title: String;
+  short_desc: String;
+  date: String;
+  tags: Array<string>;
+  type: String;
+  long_desc: String;
+  backgroundImgUrl: String;
+};
+
 export default function Home(): ReactNode {
-  const { siteConfig } = useDocusaurusContext();
+  const dialogRef = useRef(null);
+  const [dialogData, setDialogData] = useState<MyObject | null>({});
+  const scrollPositionRef = useRef(0);
+  const openDialog = (e, works) => {
+    const current = dialogRef.current ?? document.createElement("dialog");
+
+    setDialogData(() => works);
+
+    // useRef로 즉시 scroll 위치 저장
+    scrollPositionRef.current = window.pageYOffset;
+
+    if (!current) return;
+
+    current.showModal();
+    window.scrollTo({ top: scrollPositionRef.current });
+  };
+  const closeDialog = (e) => {
+    const current = dialogRef.current ?? document.createElement("dialog");
+
+    if (!current) return;
+    if (e.target.nodeName === "DIALOG") {
+      current.close();
+    }
+
+    // current.close();
+  };
+
   return (
     <div className={styles.aboutPage}>
       <div className={styles.container}>
@@ -84,87 +118,103 @@ export default function Home(): ReactNode {
           <section className="projects_section">
             <h2>Projects</h2>
             <div className={styles.work_card_wrap}>
-              {projects.map(
-                ({
-                  id,
-                  title,
-                  short_desc,
-                  date,
-                  tags,
-                  company,
-                  backgroundImgUrl,
-                }) => (
-                  <div key={id} className={styles.work_card_item}>
-                    <button>
-                      <div
-                        style={{
-                          background: `url(${backgroundImgUrl}) no-repeat center/cover`,
-                          width: "100%",
-                          height: "300px",
-                        }}
-                      ></div>
-                      <div className={styles.item_desc}>
-                        <h3>{title}</h3>
-                        <p>{short_desc}</p>
-                        <p>{date}</p>
-                        <div className={styles.tag_wrap}>
-                          {tags.map((tag) => (
-                            <span>{tag}</span>
-                          ))}
-                        </div>
-                        <div className={styles.type}>
-                          <span>{company}</span>
-                        </div>
+              {projects.map((project) => (
+                <div
+                  key={project.id}
+                  onClick={(e) => openDialog(e, project)}
+                  className={styles.work_card_item}
+                >
+                  <button>
+                    <div
+                      style={{
+                        background: `url(${project.backgroundImgUrl}) no-repeat center/cover`,
+                        width: "100%",
+                        height: "300px",
+                      }}
+                    ></div>
+                    <div className={styles.item_desc}>
+                      <h3>{project.title}</h3>
+                      <p>{project.short_desc}</p>
+                      <p>{project.date}</p>
+                      <div className={styles.tag_wrap}>
+                        {project.tags.map((tag) => (
+                          <span>{tag}</span>
+                        ))}
                       </div>
-                    </button>
-                  </div>
-                )
-              )}
+                      <div className={styles.type}>
+                        <span>{project.type}</span>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              ))}
             </div>
           </section>
           <section className="activities_section">
             <h2>Activities</h2>
             <div className={styles.work_card_wrap}>
-              {activities.map(
-                ({
-                  id,
-                  title,
-                  short_desc,
-                  date,
-                  tags,
-                  type,
-                  backgroundImgUrl,
-                }) => (
-                  <div key={id} className={styles.work_card_item}>
-                    <button>
-                      <div
-                        style={{
-                          background: `url(${backgroundImgUrl}) no-repeat center/cover`,
-                          width: "100%",
-                          height: "300px",
-                        }}
-                      ></div>
-                      <div className={styles.item_desc}>
-                        <h3>{title}</h3>
-                        <p>{short_desc}</p>
-                        <p>{date}</p>
-                        <div className={styles.tag_wrap}>
-                          {tags.map((tag) => (
-                            <span>{tag}</span>
-                          ))}
-                        </div>
-                        <div className={styles.type}>
-                          <span>{type}</span>
-                        </div>
+              {activities.map((activity) => (
+                <div
+                  key={activity.id}
+                  onClick={(e) => openDialog(e, activity)}
+                  className={styles.work_card_item}
+                >
+                  <button>
+                    <div
+                      style={{
+                        background: `url(${activity.backgroundImgUrl}) no-repeat center/cover`,
+                        width: "100%",
+                        height: "300px",
+                      }}
+                    ></div>
+                    <div className={styles.item_desc}>
+                      <h3>{activity.title}</h3>
+                      <p>{activity.short_desc}</p>
+                      <p>{activity.date}</p>
+                      <div className={styles.tag_wrap}>
+                        {activity.tags.map((tag) => (
+                          <span>{tag}</span>
+                        ))}
                       </div>
-                    </button>
-                  </div>
-                )
-              )}
+                      <div className={styles.type}>
+                        <span>{activity.type}</span>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              ))}
             </div>
           </section>
         </main>
       </div>
+
+      <dialog
+        onClick={(e) => closeDialog(e)}
+        className={styles.about_dialog}
+        ref={dialogRef}
+      >
+        <div
+          style={{
+            background: `url(${dialogData.backgroundImgUrl}) no-repeat center/cover`,
+            width: "100%",
+            height: "300px",
+          }}
+        ></div>
+        <div className={styles.item_desc}>
+          <h1>{dialogData.title}</h1>
+          <p>{dialogData.short_desc}</p>
+          <p>{dialogData.long_desc}</p>
+          <p>{dialogData.date}</p>
+          <div className={styles.tag_wrap}>
+            {dialogData?.tags?.map((tag) => (
+              <span>{tag}</span>
+            ))}
+          </div>
+          <div className={styles.type}>
+            <span>{dialogData.type}</span>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 }
