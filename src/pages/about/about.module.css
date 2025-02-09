@@ -1,6 +1,3 @@
-p {
-  margin-bottom: 10px;
-}
 .aboutPage {
   position: relative;
   width: 100%;
@@ -25,6 +22,15 @@ p {
   left: 0px;
   background: rgba(0, 0, 0, 0.9);
 }
+
+.dialog_item_desc {
+  margin-top: 10px;
+}
+
+.dialog_item_desc h3 {
+  font-size: 16px;
+}
+
 .container {
   margin: 0 auto;
   width: 700px;
@@ -53,16 +59,60 @@ p {
   border-radius: 50%;
   background-color: #f18149;
 }
+
+/* home link animation START */
 .home_link {
+  overflow: hidden;
+  position: relative;
   display: inline-block;
   margin-bottom: 30px;
   font-size: 30px;
   font-weight: 900;
   -webkit-text-stroke: 1px #fff;
+  /* transition: all 0.2s; */
 }
-.home_link:hover {
-  text-decoration: none;
+.home_link::before,
+.home_link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
 }
+.home_link::before {
+  background-color: #2d2d2d;
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.home_link::after {
+  content: "rowanna.";
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  -webkit-text-stroke: 0;
+  color: #2d2d2d;
+}
+.home_link:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+.home_link:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.home_link span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.home_link:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+/* home link animation END */
 
 .profile {
   display: grid;
@@ -158,4 +208,27 @@ p {
   border-radius: 6px;
   padding: 4px 6px;
   font-size: 11px;
+}
+
+@media (max-width: 940px) {
+  .container {
+    width: 100vw;
+    min-width: 300px;
+  }
+  .profile {
+    grid-template-columns: 1fr;
+    /* display: unset; */
+  }
+  .profile_img {
+    margin-bottom: 30px;
+  }
+  @media (max-width: 520px) {
+    .about_dialog {
+      width: 100%;
+      min-width: unset;
+    }
+    .work_card_wrap {
+      grid-template-columns: 1fr;
+    }
+  }
 }

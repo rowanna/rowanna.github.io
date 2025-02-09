@@ -47,7 +47,7 @@ export default function Home(): ReactNode {
     <div className={styles.aboutPage}>
       <div className={styles.container}>
         <Link to="/" className={styles.home_link}>
-          rowanna.
+          <span>rowanna.</span>
         </Link>
         <main>
           <section className={styles.profile}>
@@ -200,7 +200,7 @@ export default function Home(): ReactNode {
             height: "300px",
           }}
         ></div>
-        <div className={styles.item_desc}>
+        <div className={styles.dialog_item_desc}>
           <h1>{dialogData.title}</h1>
           <p>{dialogData.short_desc}</p>
           <p>{dialogData.long_desc}</p>

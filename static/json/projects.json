@@ -7,7 +7,7 @@
       "date": "2023.07.13 - 2024.07.31",
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
-      "long_desc": "long_desc",
+      "long_desc": "긴 설명",
       "backgroundImgUrl": "/img/projects/tuniverse.png"
     },
     {
@@ -17,7 +17,7 @@
       "date": "2023.07.13 - 2024.07.31",
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
-      "long_desc": "long_desc",
+      "long_desc": "긴 설명",
       "backgroundImgUrl": "/img/projects/skb_cloud_pc.png"
     },
     {
@@ -27,7 +27,7 @@
       "date": "2023.07.13 - 2024.07.31",
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
-      "long_desc": "long_desc",
+      "long_desc": "긴 설명",
       "backgroundImgUrl": "/img/projects/samsung.png"
     },
     {
@@ -37,7 +37,7 @@
       "date": "2023.07.13 - 2024.07.31",
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
-      "long_desc": "long_desc",
+      "long_desc": "긴 설명",
       "backgroundImgUrl": "/img/projects/tuniverse2.png"
     }
   ]

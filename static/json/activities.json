@@ -7,7 +7,7 @@
       "date": "2023.07.13 - 2024.07.31",
       "tags": ["javascript"],
       "type": "study",
-      "long_desc": "long_desc",
+      "long_desc": "긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명",
       "backgroundImgUrl": "/img/activities/deep_dive_study.png"
     },
     {
@@ -17,7 +17,7 @@
       "date": "2023.07.13 - 2024.07.31",
       "tags": ["javascript"],
       "type": "bootcamp",
-      "long_desc": "long_desc",
+      "long_desc": "긴 설명",
       "backgroundImgUrl": "/img/activities/hanghae.png"
     },
     {
@@ -27,7 +27,7 @@
       "date": "2023.07.13 - 2024.07.31",
       "tags": ["javascript"],
       "type": "bootcamp",
-      "long_desc": "long_desc",
+      "long_desc": "긴 설명",
       "backgroundImgUrl": "/img/activities/asac.png"
     }
   ]
