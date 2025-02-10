@@ -1,7 +1,7 @@
-/* dialog 태그를 사용하고 .showModal() 메서드를 통해 dialog를 열었을 경우 */
-/* body:has(dialog[open]) {
+/* dialog 태그를 통해 열었을 경우 */
+body:has(dialog[open]) {
   overflow: hidden !important;
-} */
+}
 .aboutPage {
   position: relative;
   width: 100%;

@@ -18,7 +18,7 @@ type MyObject = {
 export default function About(): ReactNode {
   const dialogRef = useRef(null);
   const [dialogData, setDialogData] = useState<MyObject | null>({});
-  const scrollPositionRef = useRef(0);
+  // const scrollPositionRef = useRef(0);
   const openDialog = (e, works) => {
     const current = dialogRef.current ?? document.createElement("dialog");
 
