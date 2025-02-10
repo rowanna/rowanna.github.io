@@ -1,9 +1,8 @@
 ---
-id: "frontend"
-tags:
-  - docusaurus
+title: "Frontend Intro"
+description: 프론트엔드 관련 글들을 모아놓은 페이지입니다
 ---
 
-# Title
+# Frontend Intro
 
-`111111Content
+프론트엔드 관련 글들을 모아놓은 페이지입니다

@@ -28,7 +28,7 @@ docusaurus블로그에서 다음과 같이 Docs가 아닌 여러개의 문서페
 
 ## 🫧 docusaurus.config.ts에서 설정하기
 
-### presets을 사용하는 방법으로 문서다수인스턴스(`docs-multi-instance`) 설정하기
+### presets을 사용하는 방법으로 문서 다수 인스턴스(`docs-multi-instance`) 설정하기
 
 `docs-multi-instance`는 preset을 사용하는 방법과 preset을 이용하지 않는 방법이 있는데요,  
 preset을 이용하지 않는 방법으로 했더니 오류가 잘 나서 preset을 이용하는 방법으로 소개하겠습니다.  

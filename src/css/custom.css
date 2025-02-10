@@ -279,12 +279,14 @@ img {
 /* main page END */
 
 /* sidebar START */
-.collapseSidebarButton_PEFL {
+/* .collapseSidebarButton_PEFL {
   position: absolute !important;
   top: 60px;
-  left: 230px;
+  left: 250px;
   border: none !important;
-}
+  width: 10px !important;
+  height: 100% !important;
+} */
 /* sidebar END */
 
 @media (max-width: 940px) {

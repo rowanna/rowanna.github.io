@@ -1,9 +1,9 @@
 ---
-slug: nextjs-simple-tutorial-first
 title: Next.js가 처음인 그대를 위한 간단한 튜토리얼(1)
-authors: [rowanna]
+description: Next.js를 왜 써야할까?🤔 웹 페이지 렌더 방식인 SSG, CSR, SSR, ISR에 대해 알아보고, SPA, MPA가 뭔지도 알아봅시다
 image: "https://rowanna.github.io/assets/images/image-6-46edb3ef3507ca7c4cbbba76b12f2ac3.png"
 tags: [frontend, nextjs, ASAC07]
+sidebar_position: 2
 ---
 
 ![](image-6.png)

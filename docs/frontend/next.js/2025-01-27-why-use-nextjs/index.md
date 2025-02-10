@@ -1,16 +1,15 @@
 ---
-slug: why-use-nextjs
-title: 웹 페이지 렌더링 방식에서 본 Next.js 쓰는 이유
-authors: [rowanna]
+title: "웹 페이지 렌더링 방식에서 본 Next.js 쓰는 이유"
+description: Next.js를 왜 써야할까?🤔 웹 페이지 렌더 방식인 SSG, CSR, SSR, ISR에 대해 알아보고, SPA, MPA가 뭔지도 알아봅시다
 image: "https://rowanna.github.io/assets/images/image-8c1f10f8fc07a16e01ae83e74cbab729.png"
-tags: [frontend, ASAC07]
+sidebar_position: 1
 ---
 
 ![](image.png)
 
-Next.js를 왜 써야할까?🤔
+**Next.js를 왜 써야할까?🤔**
 
-웹 페이지 렌더 방식인 SSG, CSR, SSR, ISR에 대해 알아보고, SPA, MPA가 뭔지도 알아봅시다
+**웹 페이지 렌더 방식인 SSG, CSR, SSR, ISR에 대해 알아보고, SPA, MPA가 뭔지도 알아봅시다**
 
 <!-- truncate -->
 
@@ -41,6 +40,7 @@ React에 필요한 번들링, 컴파일 등의 필요한 도구들을 추상화�
 | **SSR (Server Side Rendering)** | 요청 시 서버에서 HTML 생성 | 서버 (요청 시) | ✅ | ✅ | ⚡ 적당히 빠름 | ⚡ 적당히 빠름 |
 
 ![alt text](image-1.png)
+
 웹 크롤러를 기준으로 그림을 이해하면 각 방식이 SEO가 어떻게 이루어지는지 이해하기 쉬울 것입니다.(애런쌤 좋은 설명 감사해요...!!)
 
 ### SSG(Static Site Generation)
