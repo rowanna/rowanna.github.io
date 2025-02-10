@@ -8,7 +8,7 @@ tags: [frontend, docusaurus]
 
 ![](image.png)
 
-**docusaurus에서 여러개의 docs를 만들고 커스텀한 이름으로 path를 지정해봅시다**
+**docusaurus에서 여러개의 docs를 만들고 path에 docs를 제외하고 커스텀한 이름으로 path를 지정해봅시다**
 
 <!-- truncate -->
 
