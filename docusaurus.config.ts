@@ -124,7 +124,7 @@ const config: Config = {
         },
         {
           type: "docSidebar",
-          sidebarId: "frontend",
+          sidebarId: "frontendSidebar",
           position: "left",
           label: "Frontend",
           to: "/frontend",
