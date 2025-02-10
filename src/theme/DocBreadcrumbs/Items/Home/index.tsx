@@ -3,7 +3,6 @@ import Link from "@docusaurus/Link";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import { translate } from "@docusaurus/Translate";
 import IconHome from "@theme/Icon/Home";
-import React from "react";
 import { useLocation } from "@docusaurus/router";
 
 import styles from "./styles.module.css";
