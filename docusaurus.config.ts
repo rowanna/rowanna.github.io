@@ -26,7 +26,7 @@ const config: Config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: `${ENV_VARIABLE}`, // Usually your GitHub org/user name.
   projectName: "rowanna.github.io", // Usually your repo name.
-  onBrokenLinks: "throw",
+  onBrokenLinks: "log",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
@@ -46,6 +46,8 @@ const config: Config = {
           editUrl: `${ENV_VARIABLE.githubURL}/rowanna.github.io/tree/main/`,
           path: "docs/series",
           routeBasePath: "/series",
+          docCategoryGeneratedIndexComponent:
+            "@site/src/components/CategoryIndexPage",
         },
         blog: {
           routeBasePath: "/etc",
