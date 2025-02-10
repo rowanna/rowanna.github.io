@@ -1,0 +1,9 @@
+{
+  "label": "Series Intro",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "All Series Articles",
+    "description": "Browse all series articles."
+  }
+}
