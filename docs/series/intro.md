@@ -1,8 +1,9 @@
 ---
-id: intro
-title: Introduction
+title: "series Intro"
+description: 개발 관련 시리즈 글들을 모아놓은 페이지입니다
+sidebar_position: 1
 ---
 
-# 시리즈 문서 시작하기
+# series Intro
 
-이 문서는 시리즈 문서를 위한 공간입니다.
+개발 관련 시리즈 글들을 모아놓은 페이지입니다

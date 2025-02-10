@@ -1,9 +1,9 @@
 ---
-slug: docusaurus-swizzling
 title: docusaurus swizzling 으로 utteranc 댓글기능, 조회수 기능 붙이기
-authors: [rowanna]
+description: Docusaurus블로그 BlogPostItem 컴포넌트에 swizzling으로 utteranc 댓글추가, hits 조회수 추가 기능을 추가해보자.
 image: "https://rowanna.github.io/assets/images/image-86d0c117415d16cc10fc5a4afce575e2.png"
 tags: [blog, docusaurus]
+sidebar_position: 5
 ---
 
 ![](image.png)

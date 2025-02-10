@@ -91,7 +91,7 @@ export default function HomepageFeatures(): ReactNode {
             </button>
 
             <button>
-              <Link to={"/blog"}>* Blog</Link>
+              <Link to={"/series/intro"}>* Blog</Link>
             </button>
           </div>
         </div>

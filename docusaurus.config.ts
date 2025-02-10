@@ -48,6 +48,7 @@ const config: Config = {
           routeBasePath: "/series",
         },
         blog: {
+          routeBasePath: "/etc",
           showReadingTime: true,
           feedOptions: {
             type: ["rss", "atom"],
@@ -131,9 +132,9 @@ const config: Config = {
           docsPluginId: "frontend",
         },
         {
-          to: "/blog",
+          to: "/etc",
           position: "left",
-          label: "Blog",
+          label: "Etc",
         },
         // {
         //   to: "/blog/tags",

@@ -1,8 +1,8 @@
 ---
-slug: why-i-chose-docusaurus-blog
 title: 포트폴리오 겸 블로그로 docusaurus를 선택한 이유
-authors: [rowanna]
+description: 블로그 + 포트폴리오로 `docusaurus`를 이용해서 만든 이유부터 그 과정을 이야기 해보는 글
 tags: [blog, frontend, docusaurus]
+sidebar_position: 1
 ---
 
 블로그 + 포트폴리오로 `docusaurus`를 이용해서 만든 이유부터 그 과정을 이야기 해보는 글

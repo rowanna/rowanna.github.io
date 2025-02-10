@@ -1,9 +1,9 @@
 ---
-slug: how-to-set-docusaurus-multiple-docs
 title: docusaurus에서 docs 여러개 만들고 이름 바꾸기
-authors: [rowanna]
+description: docusaurus에서 여러개의 docs를 만들고 path에 docs를 제외하고 커스텀한 이름으로 path를 지정해봅시다
 image: "https://rowanna.github.io/assets/images/image-e0b000fe863de10ac5a519d603147116.png"
 tags: [frontend, docusaurus]
+sidebar_position: 6
 ---
 
 ![](image.png)
