@@ -15,7 +15,7 @@ type MyObject = {
   backgroundImgUrl: String;
 };
 
-export default function Home(): ReactNode {
+export default function About(): ReactNode {
   const dialogRef = useRef(null);
   const [dialogData, setDialogData] = useState<MyObject | null>({});
   const scrollPositionRef = useRef(0);
@@ -25,12 +25,12 @@ export default function Home(): ReactNode {
     setDialogData(() => works);
 
     // useRef로 즉시 scroll 위치 저장
-    scrollPositionRef.current = window.pageYOffset;
+    // scrollPositionRef.current = window.pageYOffset;
 
     if (!current) return;
 
     current.showModal();
-    window.scrollTo({ top: scrollPositionRef.current });
+    // window.scrollTo({ top: scrollPositionRef.current });
   };
   const closeDialog = (e) => {
     const current = dialogRef.current ?? document.createElement("dialog");
@@ -39,8 +39,6 @@ export default function Home(): ReactNode {
     if (e.target.nodeName === "DIALOG" || e.target.nodeName === "BUTTON") {
       current.close();
     }
-
-    // current.close();
   };
 
   return (
