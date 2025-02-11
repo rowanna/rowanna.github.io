@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import styles from "./about.module.css";
+import styles from "./styles.module.css";
 import mediumZoom from "medium-zoom";
 
 type DialogProps = {
@@ -49,14 +49,14 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, dialogData, close }) => {
     <>
       <dialog className={styles.about_dialog} ref={dialogRef}>
         <div className="slide-container">
-          {dialogData.slideImages?.length > 0 && (
+          {dialogData?.slideImages?.length > 0 && (
             <Slide
               easing="ease"
               infinite={true}
               arrows={true}
               indicators={true}
             >
-              {dialogData.slideImages?.map((slideImage, index) => (
+              {dialogData?.slideImages?.map((slideImage, index) => (
                 <div
                   style={{
                     position: "relative",
