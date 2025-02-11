@@ -278,6 +278,9 @@ img {
 
 /* main page END */
 
+.medium-zoom-overlay {
+  z-index: 3;
+}
 /* sidebar START */
 /* .collapseSidebarButton_PEFL {
   position: absolute !important;

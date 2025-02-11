@@ -22,13 +22,14 @@ function ModalProvider({ children }) {
     setModal({ isOpen: true, dialogData: content });
   }
   function close(e) {
-    if (
-      e.target.nodeName === "DIALOG" ||
-      (e.target.nodeName === "BUTTON" &&
-        e.target.className.includes("closeBtn"))
-    ) {
-      setModal({ isOpen: false, dialogData: <></> });
-    }
+    // if (
+    //   (e.target.nodeName === "DIV" &&
+    //     e.target.className.includes("backdrop")) ||
+    //   (e.target.nodeName === "BUTTON" &&
+    //     e.target.className.includes("closeBtn"))
+    // ) {
+    setModal({ isOpen: false, dialogData: <></> });
+    // }
   }
   return (
     <ModalContext.Provider value={{ open, close }}>

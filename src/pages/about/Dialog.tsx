@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import styles from "./about.module.css";
+import mediumZoom from "medium-zoom";
 
 type DialogProps = {
   isOpen: boolean;
@@ -23,15 +24,28 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, dialogData, close }) => {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
 
   useEffect(() => {
-    isOpen ? dialogRef.current.showModal() : dialogRef.current.close();
+    const backdrop = document.getElementById("backdrop");
+    if (isOpen) {
+      dialogRef.current.show();
+
+      backdrop.style.display = "block";
+    } else {
+      dialogRef.current.close();
+      backdrop.style.display = "none";
+    }
+
+    // 블로그 포스트 로드 후 이미지에 줌 효과 추가
+    const zoom = mediumZoom(document.querySelectorAll("img"), {
+      margin: 24, // 이미지 확대 시 주변 여백
+    });
+
+    return () => {
+      zoom.detach(); // 컴포넌트 해제 시 줌 효과 제거
+    };
   }, [isOpen, dialogData]);
   return (
     <>
-      <dialog
-        onClick={(e) => close(e)}
-        className={styles.about_dialog}
-        ref={dialogRef}
-      >
+      <dialog className={styles.about_dialog} ref={dialogRef}>
         <div className="slide-container">
           {dialogData.slideImages?.length > 0 && (
             <Slide
@@ -41,27 +55,35 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, dialogData, close }) => {
               indicators={true}
             >
               {dialogData.slideImages?.map((slideImage, index) => (
-                <div key={slideImage.id}>
+                <div
+                  style={{
+                    position: "relative",
+                  }}
+                  key={slideImage.id}
+                >
                   <div
                     style={{
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      backgroundSize: "cover",
+                      flexDirection: "column",
                       height: "400px",
-                      backgroundImage: `url(${slideImage.url})`,
                     }}
                   >
-                    <span
-                      style={{
-                        padding: "20px",
-                        background: "#efefef",
-                        color: "#000000",
-                      }}
-                    >
-                      {slideImage.caption}
-                    </span>
+                    <img className={styles.dialogImg} src={slideImage.url} />
                   </div>
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: "0",
+                      left: "0",
+                      zIndex: 4,
+                      background: "#efefef",
+                      color: "#000000",
+                    }}
+                  >
+                    {slideImage.caption}
+                  </span>
                 </div>
               ))}
             </Slide>
@@ -85,6 +107,11 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, dialogData, close }) => {
           Close
         </button>
       </dialog>
+      <div
+        id="backdrop"
+        className={styles.backdrop}
+        style={{ display: "none" }}
+      ></div>
     </>
   );
 };

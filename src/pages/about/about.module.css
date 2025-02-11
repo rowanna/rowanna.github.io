@@ -23,14 +23,22 @@ body:has(dialog[open]) {
   width: 1000px;
   min-width: 500px;
   border: 10px solid #f2af8d;
+  z-index: 1;
 }
-.about_dialog::backdrop {
+.backdrop {
   position: fixed;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+img {
+  z-index: 4;
 }
 
 .closeBtn {
