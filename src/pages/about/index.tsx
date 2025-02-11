@@ -4,7 +4,7 @@ import styles from "./about.module.css";
 import Link from "@docusaurus/Link";
 import projectsData from "../../../static/json/projects.json";
 import activitiesData from "../../../static/json/activities.json";
-import Dialog from "@site/src/pages/about/Dialog";
+import Dialog from "./Dialog";
 const ModalContext = createContext({
   open: (content) => {},
   close: () => {},
@@ -66,7 +66,7 @@ function AboutContent() {
                 <a href="https://www.linkedin.com/in/wonji-na/" target="_blank">
                   LinkedIn
                 </a>
-                <Link to={"/blog"}>Blog</Link>
+                <Link to={"/series/intro"}>Blog</Link>
               </div>
               <div>
                 <p>📧 Email : rowankimna@gmail.com</p>

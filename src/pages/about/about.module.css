@@ -285,6 +285,12 @@ img {
   font-size: 11px;
 }
 
+@media (max-width: 1100px) {
+  .about_dialog {
+    width: 100%;
+    min-width: unset;
+  }
+}
 @media (max-width: 940px) {
   .container {
     width: 100vw;
@@ -297,13 +303,9 @@ img {
   .profile_img {
     margin-bottom: 30px;
   }
-  @media (max-width: 520px) {
-    .about_dialog {
-      width: 100%;
-      min-width: unset;
-    }
-    .work_card_wrap {
-      grid-template-columns: 1fr;
-    }
+}
+@media (max-width: 520px) {
+  .work_card_wrap {
+    grid-template-columns: 1fr;
   }
 }
