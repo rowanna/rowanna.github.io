@@ -8,21 +8,56 @@
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
       "long_desc": "긴 설명",
-      "backgroundImgUrl": "/img/projects/tuniverse.png",
+      "backgroundImgUrl": "/img/projects/new_tuniverse/tuniverse1.png",
       "slideImages": [
         {
           "id": 0,
-          "url": "/img/projects/tuniverse.png",
+          "url": "/img/projects/new_tuniverse/tuniverse1.png",
           "caption": "caption1"
         },
         {
           "id": 1,
-          "url": "/img/projects/tuniverse.png",
+          "url": "/img/projects/new_tuniverse/tuniverse1.gif",
           "caption": "caption2"
         },
         {
           "id": 2,
-          "url": "/img/projects/tuniverse.png",
+          "url": "/img/projects/new_tuniverse/tuniverse2.gif",
+          "caption": "caption2"
+        },
+        {
+          "id": 3,
+          "url": "/img/projects/new_tuniverse/tuniverse3.gif",
+          "caption": "caption2"
+        },
+        {
+          "id": 1,
+          "url": "/img/projects/new_tuniverse/tuniverse11.png",
+          "caption": "caption2"
+        },
+        {
+          "id": 2,
+          "url": "/img/projects/new_tuniverse/tuniverse12.png",
+          "caption": "caption3"
+        },
+        {
+          "id": 3,
+          "url": "/img/projects/new_tuniverse/tuniverse13.png",
+          "caption": "caption1"
+        },
+        {
+          "id": 4,
+          "url": "/img/projects/new_tuniverse/tuniverse14.png",
+          "caption": "caption2"
+        },
+        {
+          "id": 5,
+          "url": "/img/projects/new_tuniverse/tuniverse15.png",
+          "caption": "caption3"
+        },
+        {
+          "id": 6,
+          "url": "/img/projects/new_tuniverse/tuniverse16.png",
           "caption": "caption3"
         }
       ]
@@ -35,22 +70,27 @@
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
       "long_desc": "긴 설명",
-      "backgroundImgUrl": "/img/projects/skb_cloud_pc.png",
+      "backgroundImgUrl": "/img/projects/cloudpc/01.png",
       "slideImages": [
         {
           "id": 0,
-          "url": "/img/projects/skb_cloud_pc.png",
+          "url": "/img/projects/cloudpc/01.png",
           "caption": "caption1"
         },
         {
           "id": 1,
-          "url": "/img/projects/skb_cloud_pc.png",
+          "url": "/img/projects/cloudpc/02.png",
           "caption": "caption2"
         },
         {
           "id": 2,
-          "url": "/img/projects/skb_cloud_pc.png",
+          "url": "/img/projects/cloudpc/03.png",
           "caption": "caption3"
+        },
+        {
+          "id": 3,
+          "url": "/img/projects/cloudpc/04.png",
+          "caption": "caption4"
         }
       ]
     },
@@ -62,21 +102,31 @@
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
       "long_desc": "긴 설명",
-      "backgroundImgUrl": "/img/projects/samsung.png",
+      "backgroundImgUrl": "/img/projects/samsung/01.png",
       "slideImages": [
         {
           "id": 0,
-          "url": "/img/projects/samsung.png",
+          "url": "/img/projects/samsung/01.png",
           "caption": "caption1"
         },
         {
           "id": 1,
-          "url": "/img/projects/samsung.png",
+          "url": "/img/projects/samsung/02.gif",
           "caption": "caption2"
         },
         {
           "id": 2,
-          "url": "/img/projects/samsung.png",
+          "url": "/img/projects/samsung/02.png",
+          "caption": "caption2"
+        },
+        {
+          "id": 3,
+          "url": "/img/projects/samsung/03.png",
+          "caption": "caption3"
+        },
+        {
+          "id": 4,
+          "url": "/img/projects/samsung/04.png",
           "caption": "caption3"
         }
       ]
@@ -89,21 +139,26 @@
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
       "long_desc": "긴 설명",
-      "backgroundImgUrl": "/img/projects/tuniverse2.png",
+      "backgroundImgUrl": "/img/projects/old_tuniverse/01.png",
       "slideImages": [
         {
           "id": 0,
-          "url": "/img/projects/tuniverse2.png",
+          "url": "/img/projects/old_tuniverse/01.png",
           "caption": "caption1"
         },
         {
           "id": 1,
-          "url": "/img/projects/tuniverse2.png",
+          "url": "/img/projects/old_tuniverse/02.gif",
           "caption": "caption2"
         },
         {
           "id": 2,
-          "url": "/img/projects/tuniverse2.png",
+          "url": "/img/projects/old_tuniverse/03.png",
+          "caption": "caption3"
+        },
+        {
+          "id": 3,
+          "url": "/img/projects/old_tuniverse/04.png",
           "caption": "caption3"
         }
       ]

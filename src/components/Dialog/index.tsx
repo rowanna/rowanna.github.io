@@ -52,9 +52,10 @@ const Dialog: React.FC<DialogProps> = ({ isOpen, dialogData, close }) => {
           {dialogData?.slideImages?.length > 0 && (
             <Slide
               easing="ease"
-              infinite={true}
-              arrows={true}
-              indicators={true}
+              canSwipe={false}
+              infinite={dialogData?.slideImages?.length === 1 ? false : true}
+              arrows={dialogData?.slideImages?.length === 1 ? false : true}
+              indicators={dialogData?.slideImages?.length === 1 ? false : true}
             >
               {dialogData?.slideImages?.map((slideImage, index) => (
                 <div

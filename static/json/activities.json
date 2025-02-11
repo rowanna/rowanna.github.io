@@ -14,16 +14,6 @@
           "id": 0,
           "url": "/img/activities/deep_dive_study.png",
           "caption": "caption1"
-        },
-        {
-          "id": 1,
-          "url": "/img/activities/deep_dive_study.png",
-          "caption": "caption2"
-        },
-        {
-          "id": 2,
-          "url": "/img/activities/deep_dive_study.png",
-          "caption": "caption3"
         }
       ]
     },
@@ -41,16 +31,6 @@
           "id": 0,
           "url": "/img/activities/hanghae.png",
           "caption": "caption1"
-        },
-        {
-          "id": 1,
-          "url": "/img/activities/hanghae.png",
-          "caption": "caption2"
-        },
-        {
-          "id": 2,
-          "url": "/img/activities/hanghae.png",
-          "caption": "caption3"
         }
       ]
     },
@@ -68,16 +48,6 @@
           "id": 0,
           "url": "/img/activities/asac.png",
           "caption": "caption1"
-        },
-        {
-          "id": 1,
-          "url": "/img/activities/asac.png",
-          "caption": "caption2"
-        },
-        {
-          "id": 2,
-          "url": "/img/activities/asac.png",
-          "caption": "caption3"
         }
       ]
     }
