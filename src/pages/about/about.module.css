@@ -16,6 +16,10 @@ body:has(dialog[open]) {
   margin-bottom: 30px;
 }
 .about_dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 1000px;
   min-width: 500px;
   border: 10px solid #f2af8d;
@@ -28,7 +32,8 @@ body:has(dialog[open]) {
   left: 0px;
   background: rgba(0, 0, 0, 0.5);
 }
-.about_dialog button {
+
+.closeBtn {
   position: absolute;
   right: -25px;
   top: 25px;
@@ -50,8 +55,8 @@ body:has(dialog[open]) {
   transition: all 0.2s ease-in;
 }
 
-.about_dialog button::before,
-.about_dialog button::after {
+.closeBtn::before,
+.closeBtn::after {
   background-color: #f2af8d;
   content: "";
   display: block;
@@ -64,22 +69,22 @@ body:has(dialog[open]) {
   z-index: -1;
 }
 
-.about_dialog button::before {
+.closeBtn::before {
   top: 0;
   transform: rotate(45deg);
 }
 
-.about_dialog button::after {
+.closeBtn::after {
   bottom: 0;
   transform: rotate(-45deg);
 }
 
-.about_dialog button:hover {
+.closeBtn:hover {
   color: #8a2387;
 }
 
-.about_dialog button:hover::before,
-.about_dialog button:hover::after {
+.closeBtn:hover::before,
+.closeBtn:hover::after {
   height: 50px;
   transform: rotate(0deg);
 }

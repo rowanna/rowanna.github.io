@@ -8,7 +8,24 @@
       "tags": ["javascript"],
       "type": "study",
       "long_desc": "긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명긴 설명",
-      "backgroundImgUrl": "/img/activities/deep_dive_study.png"
+      "backgroundImgUrl": "/img/activities/deep_dive_study.png",
+      "slideImages": [
+        {
+          "id": 0,
+          "url": "/img/activities/deep_dive_study.png",
+          "caption": "caption1"
+        },
+        {
+          "id": 1,
+          "url": "/img/activities/deep_dive_study.png",
+          "caption": "caption2"
+        },
+        {
+          "id": 2,
+          "url": "/img/activities/deep_dive_study.png",
+          "caption": "caption3"
+        }
+      ]
     },
     {
       "id": 2,
@@ -18,7 +35,24 @@
       "tags": ["javascript"],
       "type": "bootcamp",
       "long_desc": "긴 설명",
-      "backgroundImgUrl": "/img/activities/hanghae.png"
+      "backgroundImgUrl": "/img/activities/hanghae.png",
+      "slideImages": [
+        {
+          "id": 0,
+          "url": "/img/activities/hanghae.png",
+          "caption": "caption1"
+        },
+        {
+          "id": 1,
+          "url": "/img/activities/hanghae.png",
+          "caption": "caption2"
+        },
+        {
+          "id": 2,
+          "url": "/img/activities/hanghae.png",
+          "caption": "caption3"
+        }
+      ]
     },
     {
       "id": 3,
@@ -28,7 +62,24 @@
       "tags": ["javascript"],
       "type": "bootcamp",
       "long_desc": "긴 설명",
-      "backgroundImgUrl": "/img/activities/asac.png"
+      "backgroundImgUrl": "/img/activities/asac.png",
+      "slideImages": [
+        {
+          "id": 0,
+          "url": "/img/activities/asac.png",
+          "caption": "caption1"
+        },
+        {
+          "id": 1,
+          "url": "/img/activities/asac.png",
+          "caption": "caption2"
+        },
+        {
+          "id": 2,
+          "url": "/img/activities/asac.png",
+          "caption": "caption3"
+        }
+      ]
     }
   ]
 }

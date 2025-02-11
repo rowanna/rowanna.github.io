@@ -8,7 +8,24 @@
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
       "long_desc": "긴 설명",
-      "backgroundImgUrl": "/img/projects/tuniverse.png"
+      "backgroundImgUrl": "/img/projects/tuniverse.png",
+      "slideImages": [
+        {
+          "id": 0,
+          "url": "/img/projects/tuniverse.png",
+          "caption": "caption1"
+        },
+        {
+          "id": 1,
+          "url": "/img/projects/tuniverse.png",
+          "caption": "caption2"
+        },
+        {
+          "id": 2,
+          "url": "/img/projects/tuniverse.png",
+          "caption": "caption3"
+        }
+      ]
     },
     {
       "id": 2,
@@ -18,7 +35,24 @@
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
       "long_desc": "긴 설명",
-      "backgroundImgUrl": "/img/projects/skb_cloud_pc.png"
+      "backgroundImgUrl": "/img/projects/skb_cloud_pc.png",
+      "slideImages": [
+        {
+          "id": 0,
+          "url": "/img/projects/skb_cloud_pc.png",
+          "caption": "caption1"
+        },
+        {
+          "id": 1,
+          "url": "/img/projects/skb_cloud_pc.png",
+          "caption": "caption2"
+        },
+        {
+          "id": 2,
+          "url": "/img/projects/skb_cloud_pc.png",
+          "caption": "caption3"
+        }
+      ]
     },
     {
       "id": 3,
@@ -28,7 +62,24 @@
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
       "long_desc": "긴 설명",
-      "backgroundImgUrl": "/img/projects/samsung.png"
+      "backgroundImgUrl": "/img/projects/samsung.png",
+      "slideImages": [
+        {
+          "id": 0,
+          "url": "/img/projects/samsung.png",
+          "caption": "caption1"
+        },
+        {
+          "id": 1,
+          "url": "/img/projects/samsung.png",
+          "caption": "caption2"
+        },
+        {
+          "id": 2,
+          "url": "/img/projects/samsung.png",
+          "caption": "caption3"
+        }
+      ]
     },
     {
       "id": 4,
@@ -38,7 +89,24 @@
       "tags": ["jQuery", "css", "jenkins"],
       "type": "softworks",
       "long_desc": "긴 설명",
-      "backgroundImgUrl": "/img/projects/tuniverse2.png"
+      "backgroundImgUrl": "/img/projects/tuniverse2.png",
+      "slideImages": [
+        {
+          "id": 0,
+          "url": "/img/projects/tuniverse2.png",
+          "caption": "caption1"
+        },
+        {
+          "id": 1,
+          "url": "/img/projects/tuniverse2.png",
+          "caption": "caption2"
+        },
+        {
+          "id": 2,
+          "url": "/img/projects/tuniverse2.png",
+          "caption": "caption3"
+        }
+      ]
     }
   ]
 }

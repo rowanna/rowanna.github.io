@@ -1,46 +1,49 @@
-import { useRef, useState, type ReactNode } from "react";
+import { useState, createContext, useContext, type ReactNode } from "react";
 import styles from "./about.module.css";
+
 import Link from "@docusaurus/Link";
-import { projects } from "../../../static/json/projects.json";
-import { activities } from "../../../static/json/activities.json";
+import projectsData from "../../../static/json/projects.json";
+import activitiesData from "../../../static/json/activities.json";
+import Dialog from "./Dialog";
 
-type MyObject = {
-  id: Number;
-  title: String;
-  short_desc: String;
-  date: String;
-  tags: Array<string>;
-  type: String;
-  long_desc: String;
-  backgroundImgUrl: String;
-};
+const ModalContext = createContext({
+  open: (content) => {},
+  close: () => {},
+});
+const projects = projectsData.projects;
+const activities = activitiesData.activities;
 
-export default function About(): ReactNode {
-  const dialogRef = useRef(null);
-  const [dialogData, setDialogData] = useState<MyObject | null>({});
-  // const scrollPositionRef = useRef(0);
-  const openDialog = (e, works) => {
-    const current = dialogRef.current ?? document.createElement("dialog");
+function ModalProvider({ children }) {
+  const [modal, setModal] = useState({
+    isOpen: false,
+    dialogData: {},
+  });
 
-    setDialogData(() => works);
-
-    // useRef로 즉시 scroll 위치 저장
-    // scrollPositionRef.current = window.pageYOffset;
-
-    if (!current) return;
-
-    current.showModal();
-    // window.scrollTo({ top: scrollPositionRef.current });
-  };
-  const closeDialog = (e) => {
-    const current = dialogRef.current ?? document.createElement("dialog");
-
-    if (!current) return;
-    if (e.target.nodeName === "DIALOG" || e.target.nodeName === "BUTTON") {
-      current.close();
+  function open(content) {
+    setModal({ isOpen: true, dialogData: content });
+  }
+  function close(e) {
+    if (
+      e.target.nodeName === "DIALOG" ||
+      (e.target.nodeName === "BUTTON" &&
+        e.target.className.includes("closeBtn"))
+    ) {
+      setModal({ isOpen: false, dialogData: <></> });
     }
-  };
-
+  }
+  return (
+    <ModalContext.Provider value={{ open, close }}>
+      {children}
+      <Dialog
+        isOpen={modal.isOpen}
+        dialogData={modal.dialogData}
+        close={close}
+      />
+    </ModalContext.Provider>
+  );
+}
+function AboutContent() {
+  const { open } = useContext(ModalContext);
   return (
     <div className={styles.aboutPage}>
       <div className={styles.container}>
@@ -116,10 +119,10 @@ export default function About(): ReactNode {
           <section className="projects_section">
             <h2>Projects</h2>
             <div className={styles.work_card_wrap}>
-              {projects.map((project) => (
+              {projects.map((project, idx) => (
                 <div
                   key={project.id}
-                  onClick={(e) => openDialog(e, project)}
+                  onClick={(e) => open(project)}
                   className={styles.work_card_item}
                 >
                   <button>
@@ -154,7 +157,7 @@ export default function About(): ReactNode {
               {activities.map((activity) => (
                 <div
                   key={activity.id}
-                  onClick={(e) => openDialog(e, activity)}
+                  onClick={(e) => open(activity)}
                   className={styles.work_card_item}
                 >
                   <button>
@@ -185,35 +188,13 @@ export default function About(): ReactNode {
           </section>
         </main>
       </div>
-
-      <dialog
-        onClick={(e) => closeDialog(e)}
-        className={styles.about_dialog}
-        ref={dialogRef}
-      >
-        <div
-          style={{
-            background: `url(${dialogData.backgroundImgUrl}) no-repeat center/cover`,
-            width: "100%",
-            height: "300px",
-          }}
-        ></div>
-        <div className={styles.dialog_item_desc}>
-          <h1>{dialogData.title}</h1>
-          <p>{dialogData.short_desc}</p>
-          <p>{dialogData.long_desc}</p>
-          <p>{dialogData.date}</p>
-          <div className={styles.tag_wrap}>
-            {dialogData?.tags?.map((tag) => (
-              <span>{tag}</span>
-            ))}
-          </div>
-          <div className={styles.type}>
-            <span>{dialogData.type}</span>
-          </div>
-        </div>
-        <button onClick={(e) => closeDialog(e)}>Close</button>
-      </dialog>
     </div>
+  );
+}
+export default function About(): ReactNode {
+  return (
+    <ModalProvider>
+      <AboutContent />
+    </ModalProvider>
   );
 }
