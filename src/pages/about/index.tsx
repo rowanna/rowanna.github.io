@@ -4,8 +4,7 @@ import styles from "./about.module.css";
 import Link from "@docusaurus/Link";
 import projectsData from "../../../static/json/projects.json";
 import activitiesData from "../../../static/json/activities.json";
-import Dialog from "./Dialog";
-
+import Dialog from "@site/src/pages/about/Dialog";
 const ModalContext = createContext({
   open: (content) => {},
   close: () => {},
