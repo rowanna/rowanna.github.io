@@ -43,7 +43,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          editUrl: `${ENV_VARIABLE.githubURL}/rowanna.github.io/tree/main/`,
+          // editUrl: `${ENV_VARIABLE.githubURL}/rowanna.github.io/tree/main/`,
           path: "docs/series",
           routeBasePath: "/series",
           docCategoryGeneratedIndexComponent:
@@ -58,7 +58,7 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: `${ENV_VARIABLE.githubURL}/rowanna.github.io/tree/main/`,
+          // editUrl: `${ENV_VARIABLE.githubURL}/rowanna.github.io/tree/main/`,
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
@@ -113,11 +113,11 @@ const config: Config = {
       // src: "img/logo.svg",
       // },
       items: [
-        // {
-        //   to: "/about",
-        //   position: "left",
-        //   label: "About",
-        // },
+        {
+          to: "/about",
+          position: "left",
+          label: "About",
+        },
         {
           type: "docSidebar",
           sidebarId: "series",

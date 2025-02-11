@@ -33,7 +33,8 @@ const UtterancesComments = () => {
     const script = document.createElement("script");
     script.src = "https://utteranc.es/client.js";
     script.setAttribute("repo", "rowanna/rowanna.github.io"); // GitHub 저장소 설정
-    script.setAttribute("issue-term", "pathname"); // 게시글의 URL을 기준으로 Issue 생성
+    script.setAttribute("issue-term", "title"); // 게시글의 title을 기준으로 Issue 생성
+    script.setAttribute("label", "blog-comment");
     script.setAttribute("theme", "github-light");
     script.setAttribute("crossorigin", "anonymous");
     script.async = true;
