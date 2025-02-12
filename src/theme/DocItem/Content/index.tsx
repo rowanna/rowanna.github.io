@@ -6,7 +6,8 @@ import Heading from "@theme/Heading";
 import MDXContent from "@theme/MDXContent";
 import type { Props } from "@theme/DocItem/Content";
 import { useEffect, useRef } from "react";
-
+import EditMetaRow from "@theme/EditMetaRow";
+import TagsListInline from "@theme/TagsListInline";
 /**
  Title can be declared inside md content or declared through
  front matter and added manually. To make both cases consistent,
@@ -49,11 +50,29 @@ const UtterancesComments = () => {
 };
 export default function DocItemContent({ children }: Props): ReactNode {
   const syntheticTitle = useSyntheticTitle();
+  const { metadata } = useDoc();
+  const { editUrl, lastUpdatedAt, lastUpdatedBy, tags } = metadata;
+  const canDisplayTagsRow = tags.length > 0;
+  const canDisplayEditMetaRow = !!(editUrl || lastUpdatedAt || lastUpdatedBy);
+
   return (
     <div className={clsx(ThemeClassNames.docs.docMarkdown, "markdown")}>
       {syntheticTitle && (
         <header>
           <Heading as="h1">{syntheticTitle}</Heading>
+          {canDisplayEditMetaRow && (
+            <EditMetaRow
+              className={clsx(
+                "margin-top--sm",
+                ThemeClassNames.docs.docFooterEditMetaRow
+              )}
+              editUrl={editUrl}
+              lastUpdatedAt={lastUpdatedAt}
+              lastUpdatedBy={lastUpdatedBy}
+            />
+          )}
+          <TagsListInline tags={tags} />
+          {/* {canDisplayTagsRow ?? <TagsListInline tags={tags} />} */}
         </header>
       )}
       <MDXContent>{children}</MDXContent>
