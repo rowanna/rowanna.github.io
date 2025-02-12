@@ -48,6 +48,8 @@ const config: Config = {
           routeBasePath: "/series",
           docCategoryGeneratedIndexComponent:
             "@site/src/components/CategoryIndexPage",
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: {
           routeBasePath: "/etc",
@@ -77,10 +79,34 @@ const config: Config = {
     [
       "@docusaurus/plugin-content-docs",
       {
+        id: "dev",
+        path: "docs/dev", // `docs/frontend` 폴더 내 문서 관리
+        routeBasePath: "dev", // /frontend 경로로 접근 가능
+        sidebarPath: "./devSidebars.ts",
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
         id: "frontend",
         path: "docs/frontend", // `docs/frontend` 폴더 내 문서 관리
         routeBasePath: "frontend", // /frontend 경로로 접근 가능
         sidebarPath: "./frontendSidebars.ts",
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "foundations",
+        path: "docs/foundations", // `docs/foundations` 폴더 내 문서 관리
+        routeBasePath: "foundations", // /foundations 경로로 접근 가능
+        sidebarPath: "./foundationsSidebars.ts",
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
       },
     ],
   ],
@@ -125,13 +151,34 @@ const config: Config = {
           label: "Series",
           // to: "/series",
         },
+
         {
-          type: "docSidebar",
-          sidebarId: "frontendSidebar",
+          type: "dropdown",
+          label: "Dev",
           position: "left",
-          label: "Frontend",
-          to: "/frontend",
-          docsPluginId: "frontend",
+          items: [
+            {
+              type: "docSidebar",
+              sidebarId: "devSidebar",
+              label: "Dev",
+              to: "/dev",
+              docsPluginId: "dev",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "frontendSidebar",
+              label: "Frontend",
+              to: "/frontend",
+              docsPluginId: "frontend",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "foundationsSidebar",
+              label: "Foundations",
+              to: "/foundations",
+              docsPluginId: "foundations",
+            },
+          ],
         },
         {
           to: "/etc",

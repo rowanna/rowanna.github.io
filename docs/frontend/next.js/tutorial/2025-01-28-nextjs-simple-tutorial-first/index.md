@@ -4,6 +4,7 @@ description: Next.js를 왜 써야할까?🤔 웹 페이지 렌더 방식인 SSG
 image: "https://rowanna.github.io/assets/images/image-6-46edb3ef3507ca7c4cbbba76b12f2ac3.png"
 tags: [frontend, nextjs, ASAC07]
 sidebar_position: 2
+date: 2025-01-28
 ---
 
 ![](image-6.png)
