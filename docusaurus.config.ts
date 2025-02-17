@@ -108,6 +108,17 @@ const config: Config = {
         showLastUpdateTime: true,
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "ux",
+        path: "docs/ux", // `docs/ux` 폴더 내 문서 관리
+        routeBasePath: "ux", // /ux 경로로 접근 가능
+        sidebarPath: "./uxSidebars.ts",
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
   ],
 
   themeConfig: {
@@ -171,6 +182,13 @@ const config: Config = {
               label: "Foundations",
               to: "/foundations",
               docsPluginId: "foundations",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "uxSidebar",
+              label: "UX",
+              to: "/ux",
+              docsPluginId: "ux",
             },
           ],
         },
