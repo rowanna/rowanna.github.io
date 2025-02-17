@@ -43,7 +43,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // editUrl: `${ENV_VARIABLE.githubURL}/rowanna.github.io/tree/main/`,
           path: "docs/series",
           routeBasePath: "/series",
           docCategoryGeneratedIndexComponent:
@@ -134,10 +133,6 @@ const config: Config = {
     navbar: {
       hideOnScroll: true,
       title: `${ENV_VARIABLE.blogName}`,
-      // logo: {
-      // alt: "My Site Logo",
-      // src: "img/logo.svg",
-      // },
       items: [
         {
           to: "/about",
@@ -149,12 +144,11 @@ const config: Config = {
           sidebarId: "series",
           position: "left",
           label: "Series",
-          // to: "/series",
         },
 
         {
           type: "dropdown",
-          label: "Dev",
+          label: "IT",
           position: "left",
           items: [
             {
@@ -185,11 +179,6 @@ const config: Config = {
           position: "left",
           label: "Etc",
         },
-        // {
-        //   to: "/blog/tags",
-        //   position: "left",
-        //   label: "Category",
-        // },
         {
           type: "search",
           position: "right",
@@ -207,10 +196,6 @@ const config: Config = {
         {
           title: "Sites",
           items: [
-            // {
-            //   label: "Docs",
-            //   to: "/docs/intro",
-            // },
             {
               label: "About",
               to: "/about",
@@ -219,10 +204,6 @@ const config: Config = {
               label: "Blog",
               to: "/blog",
             },
-            // {
-            //   label: "Portfolio",
-            //   to: "/",
-            // },
           ],
         },
         {
